@@ -18,7 +18,6 @@
 import type { Monaco } from "@monaco-editor/loader";
 import loader from "@monaco-editor/loader";
 
-
 const container = ref();
 const output = ref("");
 let editor: Monaco["editor"]["IStandaloneCodeEditor"] | null = null;

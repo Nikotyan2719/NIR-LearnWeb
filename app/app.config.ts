@@ -5,6 +5,5 @@ export default defineAppConfig({
         container: "py-16 sm:py-28 lg:py-46",
       },
     },
-    safelist: ["backdrop-blur"],
   },
 });

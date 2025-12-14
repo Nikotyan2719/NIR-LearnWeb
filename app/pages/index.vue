@@ -25,10 +25,10 @@ const features = ref([
   <div>
     <AppHero />
     <UPageSection
-        id="DETAIL"
-        title="Прогрессивный подход к твоему обучению"
-        description="Предлагем возможность изучать наши уроки и сразу применять их на практике при помощи нашей песочницы"
-        :features="features"
+      id="DETAIL"
+      title="Прогрессивный подход к твоему обучению"
+      description="Предлагем возможность изучать наши уроки и сразу применять их на практике при помощи нашей песочницы"
+      :features="features"
     />
     <div class="container mx-auto mt-(--ui-header-height)">
       <UiCodeEditor />

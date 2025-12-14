@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const open = ref(false);
 </script>
 
 <template>
@@ -9,5 +8,4 @@ const open = ref(false);
 </template>
 
 <style module>
-
 </style>
