@@ -1,0 +1,28 @@
+{
+  "name": "nir",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@monaco-editor/loader": "^1.7.0",
+    "@nuxt/eslint": "^1.12.1",
+    "@nuxt/ui": "^4.2.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "eslint": "^9.39.2",
+    "nuxt": "^4.2.1",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3",
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint-plugin-vue": "^10.6.2",
+    "vue-eslint-parser": "^10.2.0"
+  }
+}
