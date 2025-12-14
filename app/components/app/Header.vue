@@ -1,9 +1,5 @@
 <script setup lang="ts">
 const mode = useColorMode();
-
-watch(mode, () => {
-  console.log("mode", mode);
-});
 </script>
 
 <template>
