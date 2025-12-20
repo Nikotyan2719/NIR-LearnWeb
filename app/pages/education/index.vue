@@ -1,37 +1,57 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from "@nuxt/ui";
 
-const items = ref<NavigationMenuItem[][]>([
-  [
-    {
-      label: "Links",
-      type: "label",
-    },
-    {
-      label: "На главную",
-      icon: "i-lucide-book-open",
-      to: "/",
-    },
-    {
-      label: "Обучение",
-      icon: "i-lucide-database",
-      to: "/education",
-    },
-
-  ],
+const cards = ref([
+  {
+    title: "Типы данных",
+    description: "Какие типы данных существуют в js",
+    to: "/js/start",
+    src: "/education/img1.png",
+  },
+  {
+    title: "Операции",
+    description: "Математические операции и вывод результата",
+    to: "/docs/getting-started/integrations/fonts",
+    src: "/education/img1.png",
+  },
+  {
+    title: "Функции",
+    description: "Узнайте как создать и вызвать функцию",
+    to: "/docs/getting-started/integrations/color-mode",
+    src: "/education/img1.png",
+  },
 ]);
+
+definePageMeta({
+  layout: "menu",
+});
 </script>
 
 <template>
-  <NuxtLayout name="menu">
+  <UPageList class="flex flex-col gap-6">
     <div>
-      Основной контент
+      <div class="text-lg lg:text-3xl mb-3">Основы:</div>
+      <UPageCard
+          title="Основы HTML, JS и CSS"
+          description="Перед началом углубденного обучения ознакомьтесь с основами HTML, JS и CSS"
+          reverse
+          to="/education/start"
+          orientation="horizontal"
+      >
+        <img src="/education/img2.png" alt="image" class="w-full" >
+      </UPageCard>
     </div>
-
-    <template #aside>
-      <UNavigationMenu orientation="vertical" :items="items" class="data-[orientation=vertical]:w-48" />
-    </template>
-  </NuxtLayout>
+    <USeparator />
+    <div>
+      <div class="text-lg lg:text-3xl mb-3">JavaScript:</div>
+      <UPageGrid>
+        <UPageCard v-for="(card, index) in cards" :key="index" v-bind="card">
+          <template #header>
+            <img :src="card.src" :alt="card.title" class="w-full" >
+          </template>
+        </UPageCard>
+      </UPageGrid>
+    </div>
+  </UPageList>
 </template>
 
 <style module>

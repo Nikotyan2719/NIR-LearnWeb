@@ -1,5 +1,20 @@
 <script setup lang="ts">
 const mode = useColorMode();
+
+const items = ref([
+  [
+    {
+      label: "На главную",
+      icon: "i-lucide-book-open",
+      to: "/",
+    },
+    {
+      label: "Обучение",
+      icon: "i-lucide-database",
+      to: "/education",
+    },
+  ],
+]);
 </script>
 
 <template>
@@ -17,6 +32,9 @@ const mode = useColorMode();
     </template>
     <template #right>
       <UColorModeButton size="xl" class="text-gray-700 dark:text-green-400" />
+      <UDropdownMenu :items="items" class="lg:hidden">
+        <UButton icon="i-lucide-menu" color="neutral" variant="outline" />
+      </UDropdownMenu>
     </template>
   </UHeader>
 </template>
