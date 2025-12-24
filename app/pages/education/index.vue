@@ -4,19 +4,19 @@ const cards = ref([
   {
     title: "Типы данных",
     description: "Какие типы данных существуют в js",
-    to: "/js/start",
+    to: "/js/types",
     src: "/education/img1.png",
   },
   {
     title: "Операции",
-    description: "Математические операции и вывод результата",
-    to: "/docs/getting-started/integrations/fonts",
+    description: "Базовые операции, типы сравнения",
+    to: "/js/operation",
     src: "/education/img1.png",
   },
   {
     title: "Функции",
     description: "Узнайте как создать и вызвать функцию",
-    to: "/docs/getting-started/integrations/color-mode",
+    to: "/js/types",
     src: "/education/img1.png",
   },
 ]);

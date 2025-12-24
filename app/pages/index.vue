@@ -23,15 +23,18 @@ const features = ref([
 
 <template>
   <div>
-    <AppHero />
-    <UPageSection
-      id="DETAIL"
-      title="Прогрессивный подход к твоему обучению"
-      description="Предлагем возможность изучать наши уроки и сразу применять их на практике при помощи нашей песочницы"
-      :features="features"
-    />
-    <div class="container mx-auto mt-(--ui-header-height)">
-      <UiCodeEditor />
+    <AppHero class="mb-10"/>
+    <div class="container mx-auto">
+      <UPageSection
+          id="DETAIL"
+          class="bg-gray-200 border-2 border-green-400 dark:border-transparent  dark:bg-gray-800 backdrop-blur rounded-lg"
+          title="Прогрессивный подход к твоему обучению"
+          description="Предлагем возможность изучать наши уроки и сразу применять их на практике при помощи нашей песочницы"
+          :features="features"
+      />
+      <div class="container mx-auto mt-(--ui-header-height)">
+        <UiCodeEditor />
+      </div>
     </div>
   </div>
 </template>
