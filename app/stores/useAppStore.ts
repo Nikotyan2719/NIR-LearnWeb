@@ -42,6 +42,21 @@ export const useAppStore = defineStore("app", () => {
       to: "/education/js/functions",
       class: route.path.includes("/js/functions") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
     },
+    {
+      label: "Селекторы",
+      to: "/education/css/selectors",
+      class: route.path.includes("/css/selectors") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
+    {
+      label: "Позиционирование",
+      to: "/education/css/position",
+      class: route.path.includes("/css/position") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
+    {
+      label: "Flex",
+      to: "/education/css/flex",
+      class: route.path.includes("/css/flex") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
   ]);
 
   const comments = computed<Comment[]>(() => data.value.comments.reverse());

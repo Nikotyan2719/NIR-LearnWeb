@@ -15,12 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Monaco } from "@monaco-editor/loader";
-import loader from "@monaco-editor/loader";
+import loader, { type Monaco } from "@monaco-editor/loader";
 
 const container = ref();
 const output = ref("");
-let editor: Monaco["editor"]["IStandaloneCodeEditor"] | null = null;
+let editor: Monaco["editor"]["IStandaloneCodeEditor"] = null;
 
 onMounted(async () => {
   const monaco = await loader.init();
