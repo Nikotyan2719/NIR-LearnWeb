@@ -33,7 +33,15 @@ const features = ref([
           :features="features"
       />
       <div class="container mx-auto mt-(--ui-header-height)">
-        <UiCodeEditor />
+        <UPageSection
+            id="DETAIL"
+            class="bg-gray-200 border-2 border-green-400 dark:border-transparent  dark:bg-gray-800 backdrop-blur rounded-lg"
+            title="Попробуй написать свой код!"
+            description="Используй наш уникальный редактор"
+            :ui="{ container: 'py-12!' }"
+        >
+          <UiCodeEditor />
+        </UPageSection>
       </div>
     </div>
   </div>
