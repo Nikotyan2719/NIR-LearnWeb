@@ -42,6 +42,27 @@ const cardsCss = ref([
   },
 ]);
 
+const cardsHtml = ref([
+  {
+    title: "Основы HTML",
+    description: "Изучите базовые теги и структуру HTML-документа",
+    to: "/education/html/basics",
+    src: "/education/img4.png",
+  },
+  {
+    title: "Формы в HTML",
+    description: "Создание и работа с HTML-формами",
+    to: "/education/html/forms",
+    src: "/education/img4.png",
+  },
+  {
+    title: "Семантика HTML5",
+    description: "Семантические элементы и их использование",
+    to: "/education/html/semantic",
+    src: "/education/img4.png",
+  },
+]);
+
 definePageMeta({
   layout: "menu",
 });
@@ -78,6 +99,17 @@ definePageMeta({
         <div class="text-lg lg:text-3xl mb-3">CSS:</div>
         <UPageGrid>
           <UPageCard v-for="(card, index) in cardsCss" :key="index" v-bind="card" :ui="{ header: 'ms-auto me-10' }">
+            <template #header>
+              <img :src="card.src" :alt="card.title" class="w-full max-h-32" >
+            </template>
+          </UPageCard>
+        </UPageGrid>
+      </div>
+      <USeparator :ui="{ border: 'border-gray-200 dark:border-gray-700' }"/>
+      <div>
+        <div class="text-lg lg:text-3xl mb-3">HTML:</div>
+        <UPageGrid>
+          <UPageCard v-for="(card, index) in cardsHtml" :key="'html-' + index" v-bind="card" :ui="{ header: 'ms-auto me-10' }">
             <template #header>
               <img :src="card.src" :alt="card.title" class="w-full max-h-32" >
             </template>

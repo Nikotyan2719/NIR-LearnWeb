@@ -28,6 +28,21 @@ export const useAppStore = defineStore("app", () => {
       class: route.path.includes("/education/start") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
     },
     {
+      label: "HTML",
+      to: "/education/html/basics",
+      class: route.path.includes("/html/basics") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
+    {
+      label: "Формы",
+      to: "/education/html/forms",
+      class: route.path.includes("/html/forms") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
+    {
+      label: "Семантика",
+      to: "/education/html/semantic",
+      class: route.path.includes("/html/semantic") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
+    },
+    {
       label: "Типы данных",
       to: "/education/js/types",
       class: route.path.includes("/js/types") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
