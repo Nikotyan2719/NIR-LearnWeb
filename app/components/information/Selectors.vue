@@ -16,7 +16,7 @@
         <p class="mb-4">CSS предлагает различные способы выбора элементов: от простых селекторов по тегам до сложных псевдоклассов и комбинаторов.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div class="grid gap-8 mb-8">
         <div>
           <h3 class="text-xl font-semibold mb-4">📋 Простые селекторы</h3>
           <ul class="space-y-4">
@@ -193,7 +193,7 @@ input[type="reset"] {
         <h3 class="text-xl font-semibold mb-4 text-green-800 dark:text-green-300">🎭 Псевдоклассы и псевдоэлементы</h3>
         <p class="mb-4">Специальные селекторы для элементов в определённом состоянии или для стилизации частей элементов.</p>
 
-        <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="grid gap-6 mt-6">
           <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
             <h4 class="font-bold mb-3 text-gray-800 dark:text-white">Псевдоклассы (:)</h4>
             <pre class="text-sm text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 p-3 rounded overflow-auto">/* Состояния ссылок */
@@ -311,7 +311,7 @@ li::marker {
       <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-xl mb-8 border-l-4 border-yellow-500">
         <h3 class="text-xl font-semibold mb-4 text-yellow-800 dark:text-yellow-300">💻 Практические примеры</h3>
 
-        <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="grid gap-6 mt-6">
           <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
             <h4 class="font-bold text-lg mb-3 text-gray-800 dark:text-white">Адаптивное меню</h4>
             <pre class="text-sm text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 p-3 rounded overflow-auto">/* Базовые стили */

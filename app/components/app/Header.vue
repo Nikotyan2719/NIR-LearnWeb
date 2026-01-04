@@ -1,8 +1,5 @@
 <script setup lang="ts">
 const route = useRoute();
-const appStore = useAppStore();
-const navigation = computed(() => appStore.navigation);
-
 const items = computed(() => [
   {
     label: "На главную",
@@ -15,9 +12,6 @@ const items = computed(() => [
     icon: "i-lucide-database",
     to: "/education",
     active: route.path.includes("/education"),
-    children: [
-      ...navigation.value,
-    ],
   },
 ]);
 </script>
