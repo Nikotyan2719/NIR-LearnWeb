@@ -11,14 +11,14 @@
       </p>
 
       <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl mb-8 border-l-4 border-blue-500">
-        <h3 class="text-2xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Историческая справка</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-blue-800 dark:text-blue-300">📜 Историческая справка</h3>
         <p class="mb-4">HTML был создан Тимом Бернерсом-Ли в 1991 году. Первая версия HTML содержала всего 18 тегов. С тех пор язык претерпел множество изменений, и последняя версия HTML5, выпущенная в 2014 году, привнесла семантические элементы, мультимедийную поддержку и API для сложных веб-приложений.</p>
         <p>Современный HTML5 включает более 100 элементов, поддерживает мультимедиа, графику, оффлайн-работу и многое другое без необходимости в плагинах.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div class="space-y-8 mb-8">
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Основные концепции HTML</h3>
+          <h3 class="text-2xl font-semibold mb-4">🔑 Основные концепции HTML</h3>
           <ul class="space-y-4">
             <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">1. Элементы и теги</h4>
@@ -105,14 +105,14 @@
       </p>
 
       <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-xl mb-8 border-l-4 border-purple-500">
-        <h3 class="text-2xl font-semibold mb-4 text-purple-800 dark:text-purple-300">Эволюция CSS</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-purple-800 dark:text-purple-300">📈 Эволюция CSS</h3>
         <p class="mb-4">CSS был предложен Хоконом Виумом Ли в 1994 году. Первая версия CSS1 вышла в 1996 году. CSS2 появился в 1998 году, а работа над CSS3 началась в 1999 году и продолжается до сих пор, разбитая на модули, которые развиваются независимо друг от друга.</p>
         <p>Современный CSS поддерживает сложные анимации, кастомные свойства (CSS-переменные), Grid и Flexbox для вёрстки, фильтры, blend-режимы и многое другое.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div class="space-y-8 mb-8">
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Ключевые концепции CSS</h3>
+          <h3 class="text-2xl font-semibold mb-4">🔑 Ключевые концепции CSS</h3>
           <div class="space-y-4">
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">1. Селекторы и специфичность</h4>
@@ -146,7 +146,7 @@
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Современные возможности CSS</h3>
+          <h3 class="text-2xl font-semibold mb-4">✨ Современные возможности CSS</h3>
           <div class="space-y-4">
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">1. Flexbox</h4>
@@ -192,7 +192,7 @@
       </div>
 
       <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-8 border border-gray-200 dark:border-gray-700">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Адаптивный дизайн</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">📱 Адаптивный дизайн</h3>
         <p class="mb-4 text-gray-700 dark:text-gray-300">Техники создания сайтов, которые корректно отображаются на устройствах с разными размерами экранов.</p>
 
         <h4 class="font-bold text-lg mt-4 mb-2 text-gray-800 dark:text-white">Медиа-запросы:</h4>
@@ -253,14 +253,14 @@ h1 {
       </p>
 
       <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8 border-l-4 border-green-500">
-        <h3 class="text-2xl font-semibold mb-4 text-green-800 dark:text-green-300">История и эволюция</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-green-800 dark:text-green-300">🔄 История и эволюция</h3>
         <p class="mb-4">JavaScript был создан Бренданом Эйхом в 1995 году для браузера Netscape Navigator. Задумывался как простой язык для добавления интерактивности на веб-страницы. В 1997 году был стандартизирован как ECMAScript. С 2015 года (ES6/ES2015) язык значительно изменился, получив множество новых возможностей.</p>
         <p>Современный JavaScript — это мощный мультипарадигменный язык, поддерживающий объектно-ориентированное, функциональное и императивное программирование.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 mb-8">
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Основные концепции</h3>
+          <h3 class="text-2xl font-semibold mb-4">🎯 Основные концепции</h3>
           <div class="space-y-4">
             <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">1. Типы данных и переменные</h4>
@@ -391,6 +391,7 @@ element.animate([
       </div>
 
       <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-xl border-l-4 border-yellow-500 mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-yellow-800 dark:text-yellow-300">💡 Полезные советы</h3>
         <h3 class="text-2xl font-semibold mb-4 text-yellow-800 dark:text-yellow-300">Современный стек технологий</h3>
         <p class="mb-4">Современная веб-разработка на JavaScript выходит за рамки чистого языка и включает в себя множество инструментов и библиотек:</p>
 

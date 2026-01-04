@@ -48,7 +48,8 @@ const formatDate = (dateString: string) => {
               :ui="{
                     trailing: 'px-2!',
                     base: 'resize-none'
-                  }"/>
+                  }"
+              @keydown.enter.prevent="onSubmit"/>
           <UButton type="submit" class="mt-auto" color="primary" label="Отправить" trailing size="xl" :disabled="!user.text.trim()" icon="i-heroicons-paper-airplane"/>
         </div>
       </div>

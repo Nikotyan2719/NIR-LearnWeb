@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
@@ -12,14 +11,14 @@
       </p>
 
       <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl mb-8 border-l-4 border-blue-500">
-        <h3 class="text-2xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Особенности типов в JavaScript</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-blue-800 dark:text-blue-300">🔍 Особенности типов в JavaScript</h3>
         <p class="mb-4">JavaScript использует динамическую типизацию, что позволяет переменной менять тип в процессе выполнения кода. Однако, начиная с ES6, появились <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">let</code> и <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">const</code> для блочной области видимости.</p>
         <p>Оператор <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">typeof</code> помогает определить тип значения переменной, но имеет свои особенности, например, <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">typeof null</code> возвращает <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">"object"</code>.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div class="space-y-8 mb-8">
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Примитивные типы</h3>
+          <h3 class="text-2xl font-semibold mb-4">🔢 Примитивные типы</h3>
           <ul class="space-y-4">
             <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">1. Number</h4>
@@ -98,7 +97,7 @@ console.log(bigNumber + 1n); // 1234567890123456789012345678901234567891n</pre>
           </ul>
         </div>
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Сложные типы</h3>
+          <h3 class="text-2xl font-semibold mb-4">🧩 Сложные типы</h3>
           <ul class="space-y-4">
             <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow border border-gray-200 dark:border-gray-700">
               <h4 class="font-bold text-lg mb-2 text-gray-800 dark:text-white">8. Object</h4>
@@ -141,7 +140,7 @@ const add = (a, b) => a + b;</pre>
       </div>
 
       <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-xl mb-8 border-l-4 border-yellow-500">
-        <h3 class="text-2xl font-semibold mb-4 text-yellow-800 dark:text-yellow-300">Проверка типов</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-yellow-800 dark:text-yellow-300">🔍 Проверка типов</h3>
         <p class="mb-4">В JavaScript есть несколько способов проверки типов:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
           <li><code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">typeof</code> - определяет примитивные типы</li>
@@ -162,7 +161,7 @@ console.log(Object.prototype.toString.call([])); // "[object Array]"</pre>
       </div>
 
       <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8 border-l-4 border-green-500">
-        <h3 class="text-2xl font-semibold mb-4 text-green-800 dark:text-green-300">Практическое задание</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-green-800 dark:text-green-300">💡 Практическое задание</h3>
         <p class="mb-4">Попробуйте создать переменные разных типов и вывести их типы с помощью оператора <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">typeof</code>.</p>
         <p class="mb-4">Пример:</p>
         <div class="mb-6">
