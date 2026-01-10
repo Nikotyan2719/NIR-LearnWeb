@@ -145,6 +145,19 @@ console.log(counter.getCount());  // 1</pre>
           </div>
         </div>
       </div>
+      <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8 border-l-4 border-green-500">
+        <h3 class="text-2xl font-semibold mb-4 text-green-800 dark:text-green-300">💡 Практическое задание: Работа с функциями</h3>
+        <p class="mb-4">Попробуйте создать и использовать различные типы функций в JavaScript:</p>
+        <p class="mb-4">1. Создайте обычную функцию, которая принимает параметры и возвращает результат</p>
+        <p class="mb-4">2. Напишите стрелочную функцию для выполнения той же задачи</p>
+        <p class="mb-4">3. Создайте функцию с параметрами по умолчанию</p>
+        <p class="mb-4">4. Попробуйте использовать функции высшего порядка (например, map, filter, reduce)</p>
+        <p class="mb-2">Пример:</p>
+        <div class="mb-6">
+          <UiCodeEditor />
+        </div>
+        <p>Экспериментируйте с разными способами объявления функций и их вызова, чтобы лучше понять их работу.</p>
+      </div>
     </section>
   </div>
 </template>
