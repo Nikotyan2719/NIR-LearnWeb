@@ -1,0 +1,213 @@
+[
+  {
+    "id": "css-selectors",
+    "slug": "selectors",
+    "title": "CSS Селекторы",
+    "description": "Типы селекторов, специфичность и комбинаторы",
+    "order": 1,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Введение в CSS-селекторы" },
+      { "type": "text", "content": "CSS-селекторы — это мощный инструмент для выбора и стилизации HTML-элементов. Они позволяют применять стили к конкретным элементам, группам элементов или элементам в определённом состоянии." },
+      { "type": "callout", "variant": "info", "title": "🎯 Основные типы селекторов", "content": "CSS предлагает различные способы выбора элементов: от простых селекторов по тегам до сложных псевдоклассов и комбинаторов. Понимание специфичности — ключ к управлению каскадом стилей." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Простые селекторы", "description": "Универсальный (*), по тегу (p), по классу (.class), по ID (#id).", "code": { "language": "css", "code": "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\np { color: #333; line-height: 1.6; }\n.button { padding: 12px 24px; cursor: pointer; }\n#header { background: #2c3e50; color: white; }" } },
+          { "title": "2. Селекторы атрибутов", "description": "Выбор элементов по атрибутам: точное совпадение, начало (^=), содержит (*=), конец ($=).", "code": { "language": "css", "code": "input[type=\"text\"] {\n  border: 2px solid #4CAF50;\n}\n\na[href^=\"https://\"] { color: green; }\na[href*=\"example\"] { text-decoration: underline; }\na[href$=\".pdf\"] { padding-right: 20px; }" } },
+          { "title": "3. Комбинаторы", "description": "Прямые потомки (>), смежные соседи (+), общие соседи (~), потомки (пробел).", "code": { "language": "css", "code": "nav > ul > li { display: inline-block; }\nh2 + p { font-size: 1.1em; }\nh2 ~ p { color: #666; }\n.container .item { padding: 10px; }" } },
+          { "title": "4. Псевдоклассы и псевдоэлементы", "description": "Состояния (:hover, :focus), структурные (:first-child, :nth-child), псевдоэлементы (::before, ::after).", "code": { "language": "css", "code": "a:hover { color: #2980b9; }\nli:nth-child(odd) { background: #f8f9fa; }\ninput:focus { outline: 2px solid #3498db; }\nblockquote::before { content: \"\u00ab\"; }\n::selection { background: #3498db; color: white; }" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Адаптивное меню с селекторами", "code": ".nav {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 1rem;\n}\n\n.nav__list {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  gap: 1rem;\n}\n\n.nav__link {\n  color: white;\n  text-decoration: none;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  transition: all 0.3s ease;\n}\n\n.nav__link:hover,\n.nav__link:focus {\n  background: rgba(255, 255, 255, 0.2);\n  transform: translateY(-2px);\n}\n\n.nav__link.active {\n  background: white;\n  color: #667eea;\n}\n\n@media (max-width: 768px) {\n  .nav__list {\n    flex-direction: column;\n    gap: 0.5rem;\n  }\n}" },
+      { "type": "callout", "variant": "tip", "title": "🏆 Лучшие практики", "content": "Используйте классы вместо ID для стилизации. Избегайте излишней вложенности (.nav-link лучше, чем .nav ul li a). Начинайте с менее специфичных селекторов. Используйте семантические имена классов (.btn-primary вместо .red-button)." }
+    ]
+  },
+  {
+    "id": "css-position",
+    "slug": "position",
+    "title": "CSS Позиционирование",
+    "description": "Типы позиционирования: static, relative, absolute, fixed, sticky",
+    "order": 2,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Позиционирование в CSS" },
+      { "type": "text", "content": "CSS позиционирование позволяет управлять расположением элементов на веб-странице. Понимание различных типов позиционирования критически важно для создания сложных макетов." },
+      { "type": "callout", "variant": "info", "title": "📍 Типы позиционирования", "content": "В CSS существует 5 типов: static (по умолчанию), relative (относительное), absolute (абсолютное), fixed (фиксированное), sticky (липкое). Каждый по-разному влияет на расположение элементов и их взаимодействие с потоком документа." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Static и Relative", "description": "static — нормальный поток (по умолчанию). relative — сдвиг от нормального положения, не влияет на соседей.", "code": { "language": "css", "code": ".static { position: static; }\n\n.relative {\n  position: relative;\n  top: 20px;\n  left: 30px;\n}" } },
+          { "title": "2. Absolute", "description": "Удаляется из потока, позиционируется относительно ближайшего позиционированного родителя.", "code": { "language": "css", "code": ".parent {\n  position: relative;\n  width: 300px;\n  height: 200px;\n}\n\n.child {\n  position: absolute;\n  top: 20px;\n  right: 30px;\n}" } },
+          { "title": "3. Fixed", "description": "Позиционируется относительно окна браузера, остаётся на месте при прокрутке.", "code": { "language": "css", "code": ".header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 60px;\n  z-index: 1000;\n}\n\n.content {\n  margin-top: 60px;\n}" } },
+          { "title": "4. Sticky", "description": "Комбинация relative и fixed: элемент «прилипает» при прокрутке до определённой позиции.", "code": { "language": "css", "code": ".table-container {\n  max-height: 400px;\n  overflow-y: auto;\n}\n\nth {\n  position: sticky;\n  top: 0;\n  background: #f8f9fa;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Модальное окно с позиционированием", "code": ".overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1000;\n}\n\n.modal {\n  position: relative;\n  background: white;\n  padding: 2rem;\n  border-radius: 8px;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n}\n\n.close-btn {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  background: none;\n  border: none;\n  font-size: 1.5rem;\n  cursor: pointer;\n}" }
+    ]
+  },
+  {
+    "id": "css-flex",
+    "slug": "flex",
+    "title": "CSS Flexbox",
+    "description": "Гибкая модель компоновки элементов",
+    "order": 3,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Flexbox в CSS" },
+      { "type": "text", "content": "Flexbox (гибкий контейнер) — это способ компоновки элементов, который позволяет эффективно распределять пространство между элементами и выравнивать их различными способами. Flexbox состоит из flex-контейнера и его дочерних элементов (flex-элементов)." },
+      { "type": "callout", "variant": "info", "title": "📐 Основы Flexbox", "content": "Главная ось (main axis) — направление элементов (по умолчанию горизонтально). Поперечная ось (cross axis) — перпендикулярна главной. Свойства контейнера управляют распределением пространства, свойства элементов — их поведением." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Свойства контейнера", "description": "display: flex создаёт контейнер. flex-direction задаёт направление. flex-wrap управляет переносом. justify-content и align-items выравнивают.", "code": { "language": "css", "code": ".container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 1rem;\n}" } },
+          { "title": "2. Выравнивание", "description": "justify-content — по главной оси (flex-start, center, space-between, space-around). align-items — по поперечной. align-content — многострочное выравнивание.", "code": { "language": "css", "code": ".container {\n  justify-content: center;\n  align-items: stretch;\n  align-content: space-between;\n}" } },
+          { "title": "3. Свойства элементов", "description": "order — порядок, flex-grow — рост, flex-shrink — сжатие, flex-basis — базовый размер, align-self — индивидуальное выравнивание.", "code": { "language": "css", "code": ".item {\n  order: 0;\n  flex: 0 1 auto;\n  align-self: auto;\n}\n\n.grow { flex-grow: 1; }\n.no-shrink { flex-shrink: 0; }" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Гибкая навигация и карточки", "code": ".nav {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  background: #333;\n  color: white;\n}\n\n.nav-links {\n  display: flex;\n  gap: 1rem;\n  list-style: none;\n}\n\n.nav-links a {\n  color: white;\n  text-decoration: none;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  transition: background-color 0.3s;\n}\n\n.nav-links a:hover {\n  background-color: #555;\n}\n\n.card-container {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n}\n\n.card {\n  flex: 1 1 300px;\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ddd;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.card-content {\n  padding: 1.5rem;\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n}\n\n.card p {\n  flex-grow: 1;\n}" }
+    ]
+  },
+  {
+    "id": "css-boxmodel",
+    "slug": "boxmodel",
+    "title": "Блочная модель CSS",
+    "description": "Margin, border, padding, content и box-sizing",
+    "order": 4,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Блочная модель CSS" },
+      { "type": "text", "content": "Каждый HTML-элемент на странице представляет собой прямоугольный блок. Блочная модель CSS описывает пространство, занимаемое элементом: content (содержимое), padding (внутренний отступ), border (граница) и margin (внешний отступ)." },
+      { "type": "callout", "variant": "info", "title": "🔑 Ключевое понятие: box-sizing", "content": "content-box (по умолчанию): width/height задаёт только размер содержимого. border-box: width/height включает padding и border. Рекомендуется использовать border-box глобально: * { box-sizing: border-box; }." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Content и Padding", "description": "Content — область содержимого. Padding — внутренний отступ между содержимым и границей. Можно задавать отдельно для каждой стороны.", "code": { "language": "css", "code": ".box {\n  width: 300px;\n  padding: 20px;\n  padding-top: 10px;\n  padding-right: 15px;\n  padding-bottom: 10px;\n  padding-left: 15px;\n}" } },
+          { "title": "2. Border", "description": "Граница элемента: толщина, стиль и цвет. Можно задавать отдельно для каждой стороны.", "code": { "language": "css", "code": ".box {\n  border: 2px solid #333;\n  border-top: 1px dashed red;\n  border-radius: 8px;\n}" } },
+          { "title": "3. Margin", "description": "Внешний отступ. Автоматические margin: auto для центрирования блочных элементов. Схлопывание margin вертикально.", "code": { "language": "css", "code": ".centered {\n  width: 600px;\n  margin: 0 auto;\n}\n\n.spaced {\n  margin: 20px;\n  margin-bottom: 40px;\n}" } },
+          { "title": "4. box-sizing", "description": "border-box — включает padding и border в заданную ширину. content-box — ширина только для содержимого.", "code": { "language": "css", "code": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\n.element {\n  width: 100%;\n  padding: 20px;\n  border: 5px solid #333;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Практический пример блочной модели", "code": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\n.container {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.card {\n  background: white;\n  border: 1px solid #e2e8f0;\n  border-radius: 12px;\n  padding: 24px;\n  margin-bottom: 16px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}\n\n.card-title {\n  margin: 0 0 12px 0;\n  padding-bottom: 12px;\n  border-bottom: 2px solid #e2e8f0;\n}\n\n.card-body {\n  padding: 8px 0;\n}" },
+      {
+        "type": "editor",
+        "language": "css",
+        "previewHtml": "<div class=\"box1\">Блок 1</div>\n<div class=\"box2\">Блок 2</div>\n<div class=\"box3\">Блок 3</div>",
+        "initialCode": "/* Установите border-box для всех элементов */\n\n/* .box1: ширина 200px, padding 20px, border 3px solid blue */\n.box1 {\n\n}\n\n/* .box2: ширина 300px, margin 0 auto (центрирование), padding 15px, border-radius 10px */\n.box2 {\n\n}\n\n/* .box3: margin-top 30px, padding 10px 20px, border-bottom 2px dashed gray */\n.box3 {\n\n}",
+        "instructions": "Стилизуйте три блока, используя свойства блочной модели: width, padding, border, margin, border-radius. Установите box-sizing: border-box глобально."
+      }
+    ]
+  },
+  {
+    "id": "css-grid",
+    "slug": "grid",
+    "title": "CSS Grid",
+    "description": "Двумерная система макетов для сложных дизайнов",
+    "order": 5,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "CSS Grid" },
+      { "type": "text", "content": "CSS Grid — это двумерная система макетов, позволяющая создавать сложные адаптивные дизайны. В отличие от Flexbox, Grid работает одновременно со строками и столбцами, что делает его идеальным для создания полноценных макетов страниц." },
+      { "type": "callout", "variant": "info", "title": "📐 Grid vs Flexbox", "content": "Flexbox — одномерный (строка ИЛИ столбец). Grid — двумерный (строки И столбцы). Grid лучше для макетов страниц. Flexbox лучше для компонентов. Их можно комбинировать!" },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Создание Grid-контейнера", "description": "display: grid создаёт сетку. grid-template-columns и grid-template-rows задают размеры колонок и строк.", "code": { "language": "css", "code": ".grid {\n  display: grid;\n  grid-template-columns: 200px 1fr 200px;\n  grid-template-rows: auto 1fr auto;\n  gap: 20px;\n}" } },
+          { "title": "2. Единицы fr и repeat()", "description": "fr — доля свободного пространства. repeat() — повторение шаблона. minmax() — минимальный и максимальный размер.", "code": { "language": "css", "code": ".grid {\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n}" } },
+          { "title": "3. Размещение элементов", "description": "grid-column и grid-row управляют позицией элемента. span — объединение ячеек. Именованные области с grid-template-areas.", "code": { "language": "css", "code": ".header { grid-column: 1 / -1; }\n.sidebar { grid-row: 2 / 4; }\n.main { grid-column: 2; }\n\n.layout {\n  grid-template-areas:\n    \"header header header\"\n    \"sidebar main aside\"\n    \"footer footer footer\";\n}" } },
+          { "title": "4. Выравнивание", "description": "justify-items и align-items — выравнивание элементов. justify-content и align-content — выравнивание сетки. place-items — сокращение.", "code": { "language": "css", "code": ".grid {\n  justify-items: stretch;\n  align-items: center;\n  place-items: center;\n  justify-content: center;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Полный макет страницы на Grid", "code": ".page {\n  display: grid;\n  grid-template-columns: 250px 1fr;\n  grid-template-rows: 60px 1fr 40px;\n  grid-template-areas:\n    \"header header\"\n    \"sidebar main\"\n    \"footer footer\";\n  min-height: 100vh;\n  gap: 0;\n}\n\n.page-header {\n  grid-area: header;\n  background: #2c3e50;\n  color: white;\n  display: flex;\n  align-items: center;\n  padding: 0 20px;\n}\n\n.page-sidebar {\n  grid-area: sidebar;\n  background: #34495e;\n  color: white;\n  padding: 20px;\n}\n\n.page-main {\n  grid-area: main;\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 20px;\n  align-content: start;\n}\n\n.page-footer {\n  grid-area: footer;\n  background: #ecf0f1;\n  padding: 0 20px;\n  display: flex;\n  align-items: center;\n}\n\n@media (max-width: 768px) {\n  .page {\n    grid-template-columns: 1fr;\n    grid-template-areas:\n      \"header\"\n      \"main\"\n      \"sidebar\"\n      \"footer\";\n  }\n}" },
+      {
+        "type": "editor",
+        "language": "css",
+        "previewHtml": "<div class=\"grid\">\n  <div class=\"item item1\">1</div>\n  <div class=\"item item2\">2</div>\n  <div class=\"item item3\">3</div>\n  <div class=\"item item4\">4</div>\n  <div class=\"item item5\">5</div>\n  <div class=\"item item6\">6</div>\n</div>",
+        "initialCode": "/* Создайте grid с 3 колонками равной ширины */\n.grid {\n\n}\n\n/* Базовые стили для элементов */\n.item {\n  padding: 20px;\n  background: #3498db;\n  color: white;\n  text-align: center;\n  border-radius: 4px;\n}\n\n/* .item1 занимает всю первую строку */\n.item1 {\n\n}\n\n/* .item5 занимает 2 колонки */\n.item5 {\n\n}",
+        "instructions": "Создайте CSS Grid с 3 равными колонками (1fr), gap 10px. .item1 должен занимать всю первую строку (grid-column: 1 / -1). .item5 должен занимать 2 колонки. Стилизуйте элементы фоном и padding."
+      }
+    ]
+  },
+  {
+    "id": "css-colors",
+    "slug": "colors",
+    "title": "Цвета и фоны в CSS",
+    "description": "Форматы цветов, градиенты и фоновые изображения",
+    "order": 6,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Цвета и фоны" },
+      { "type": "text", "content": "CSS предоставляет множество способов работы с цветом и фоном: именованные цвета, HEX, RGB/RGBA, HSL/HSLA, а также градиенты и фоновые изображения с тонкой настройкой." },
+      { "type": "callout", "variant": "info", "title": "🎨 Форматы цветов", "content": "Именованные: red, blue, steelblue (140+ имён). HEX: #ff0000, #f00, #ff000080 (с прозрачностью). RGB: rgb(255, 0, 0), rgba(255, 0, 0, 0.5). HSL: hsl(0, 100%, 50%), hsla(0, 100%, 50%, 0.5). Рекомендуется использовать HSL для удобной настройки." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Цвет текста и фона", "description": "color — цвет текста. background-color — цвет фона. opacity — прозрачность всего элемента.", "code": { "language": "css", "code": ".text {\n  color: #2d3748;\n  background-color: hsl(210, 36%, 96%);\n}\n\n.semitransparent {\n  background-color: rgba(0, 0, 0, 0.5);\n  color: white;\n}" } },
+          { "title": "2. Градиенты", "description": "linear-gradient — линейный, radial-gradient — радиальный, conic-gradient — конический. Можно использовать несколько цветовых остановок.", "code": { "language": "css", "code": ".linear {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n}\n\n.radial {\n  background: radial-gradient(circle, #fff, #000);\n}\n\n.repeating {\n  background: repeating-linear-gradient(\n    45deg, #fff, #fff 10px, #eee 10px, #eee 20px\n  );\n}" } },
+          { "title": "3. Фоновые изображения", "description": "background-image, background-size, background-position, background-repeat, background-attachment.", "code": { "language": "css", "code": ".hero {\n  background-image: url('bg.jpg');\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-attachment: fixed;\n}\n\n/* Краткая запись */\n.hero {\n  background: url('bg.jpg') center/cover no-repeat fixed;\n}" } },
+          { "title": "4. Несколько фонов и blend-режимы", "description": "Можно наложить несколько фоновых слоёв. mix-blend-mode и background-blend-mode для смешивания.", "code": { "language": "css", "code": ".multi-bg {\n  background:\n    linear-gradient(rgba(0,0,0,0.5), transparent),\n    url('bg.jpg') center/cover;\n}\n\n.blended {\n  background: url('bg.jpg') center/cover,\n              linear-gradient(#667eea, #764ba2);\n  background-blend-mode: overlay;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Герой-секция с градиентом и фоном", "code": ".hero {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background:\n    linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),\n    url('hero-bg.jpg') center/cover no-repeat;\n  color: white;\n  text-align: center;\n}\n\n.hero h1 {\n  font-size: 3rem;\n  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);\n}\n\n.card {\n  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);\n  border: 1px solid hsl(210, 14%, 83%);\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow:\n    0 1px 3px rgba(0, 0, 0, 0.12),\n    0 1px 2px rgba(0, 0, 0, 0.06);\n}\n\n.badge {\n  display: inline-block;\n  padding: 4px 12px;\n  border-radius: 20px;\n  background-color: hsl(150, 60%, 40%);\n  color: white;\n  font-size: 0.875rem;\n}" },
+      {
+        "type": "editor",
+        "language": "css",
+        "previewHtml": "<div class=\"box box1\">Градиент</div>\n<div class=\"box box2\">Изображение</div>\n<div class=\"box box3\">Прозрачность</div>",
+        "initialCode": "/* .box1: линейный градиент от #667eea к #764ba2, белый текст */\n.box1 {\n\n}\n\n/* .box2: радиальный градиент, белый текст */\n.box2 {\n\n}\n\n/* .box3: полупрозрачный чёрный фон (rgba), белый текст */\n.box3 {\n\n}\n\n/* Общие стили для блоков */\n.box {\n  padding: 40px;\n  margin: 10px;\n  border-radius: 8px;\n  text-align: center;\n  font-weight: bold;\n}",
+        "instructions": "Стилизуйте 3 блока: .box1 с линейным градиентом (от #667eea к #764ba2) и белым текстом, .box2 с радиальным градиентом, .box3 с полупрозрачным фоном через rgba. Все блоки должны иметь padding, border-radius и белый текст."
+      }
+    ]
+  },
+  {
+    "id": "css-typography",
+    "slug": "typography",
+    "title": "Типографика в CSS",
+    "description": "Шрифты, размеры, межстрочные интервалы и стили текста",
+    "order": 7,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Типографика в CSS" },
+      { "type": "text", "content": "Типографика — один из важнейших аспектов веб-дизайна. CSS предоставляет широкий набор свойств для управления шрифтами, размерами текста, межстрочными интервалами, выравниванием и декорированием текста." },
+      { "type": "callout", "variant": "tip", "title": "💡 Рекомендации по типографике", "content": "Используйте не более 2-3 шрифтов на странице. Размер базового текста — 16px (1rem). Межстрочный интервал (line-height) — 1.5-1.8. Длина строки — 60-80 символов. Достаточный контраст текста и фона." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Шрифты", "description": "font-family — семейство шрифтов с fallback. font-size — размер. font-weight — насыщенность. font-style — стиль. @font-face — подключение пользовательских шрифтов.", "code": { "language": "css", "code": "body {\n  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n}\n\nh1 {\n  font-weight: 700;\n  font-size: 2.5rem;\n}" } },
+          { "title": "2. Единицы измерения", "description": "px — пиксели. rem — относительно корневого шрифта. em — относительно родителя. vw — 1% ширины viewport. ch — ширина символа «0».", "code": { "language": "css", "code": "html { font-size: 16px; }\n\nh1 { font-size: 2rem; }    /* 32px */\nh2 { font-size: 1.5rem; }  /* 24px */\n.small { font-size: 0.875em; }\n.responsive { font-size: clamp(1rem, 2.5vw, 2rem); }" } },
+          { "title": "3. Интервалы и выравнивание", "description": "line-height — межстрочный интервал. letter-spacing — межбуквенный. word-spacing — межсловный. text-align — выравнивание. text-indent — отступ первой строки.", "code": { "language": "css", "code": "p {\n  line-height: 1.7;\n  letter-spacing: 0.02em;\n  text-align: justify;\n  max-width: 70ch;\n}\n\n.title {\n  letter-spacing: 0.1em;\n  text-transform: uppercase;\n}" } },
+          { "title": "4. Декорирование текста", "description": "text-decoration — подчёркивание, зачёркивание. text-shadow — тень текста. text-overflow — обработка переполнения. white-space — управление пробелами.", "code": { "language": "css", "code": "a {\n  text-decoration: none;\n  border-bottom: 2px solid currentColor;\n}\n\n.shadow {\n  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n}\n\n.truncate {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Типографическая система", "code": "html {\n  font-size: 16px;\n}\n\nbody {\n  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;\n  line-height: 1.6;\n  color: #1a202c;\n}\n\nh1, h2, h3 {\n  font-weight: 700;\n  line-height: 1.2;\n  margin-bottom: 0.5em;\n  color: #2d3748;\n}\n\nh1 { font-size: 2.5rem; }\nh2 { font-size: 2rem; }\nh3 { font-size: 1.5rem; }\n\np {\n  margin-bottom: 1em;\n  max-width: 70ch;\n}\n\n.text-sm { font-size: 0.875rem; }\n.text-lg { font-size: 1.125rem; }\n.text-xl { font-size: 1.25rem; }\n\n.font-bold { font-weight: 700; }\n.font-light { font-weight: 300; }\n\n.text-center { text-align: center; }\n.text-muted { color: #718096; }\n\n.truncate {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}" },
+      {
+        "type": "editor",
+        "language": "css",
+        "previewHtml": "<h1>Заголовок первого уровня</h1>\n<h2>Заголовок второго уровня</h2>\n<p class=\"intro\">Вступительный абзац с важной информацией о типографике в CSS.</p>\n<p class=\"muted\">Дополнительный текст с приглушённым цветом и увеличенным межстрочным интервалом для лучшей читаемости.</p>\n<p class=\"truncate\">Очень длинный текст, который должен обрезаться и заканчиваться многоточием, если не помещается в контейнер.</p>",
+        "initialCode": "/* Стилизуйте заголовки */\nh1 {\n\n}\n\nh2 {\n\n}\n\n/* .intro: увеличенный шрифт, жирность, нижняя граница */\n.intro {\n\n}\n\n/* .muted: серый цвет, увеличенный line-height */\n.muted {\n\n}\n\n/* .truncate: обрезка текста с многоточием */\n.truncate {\n\n}",
+        "instructions": "Стилизуйте h1 (крупный, жирный), h2 (средний, с нижним border), .intro (увеличенный шрифт, font-weight 600, нижний border), .muted (серый цвет #718096, line-height 1.8), .truncate (обрезка текста с text-overflow: ellipsis)."
+      }
+    ]
+  },
+  {
+    "id": "css-animations",
+    "slug": "animations",
+    "title": "Анимации и переходы CSS",
+    "description": "Transitions, keyframes, transform и плавные эффекты",
+    "order": 8,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Анимации и переходы" },
+      { "type": "text", "content": "CSS позволяет создавать плавные анимации и переходы без JavaScript. Переходы (transitions) анимируют изменение свойств, а ключевые кадры (keyframes) позволяют создавать сложные многошаговые анимации." },
+      { "type": "callout", "variant": "info", "title": "🎬 Transition vs Animation", "content": "Transition — анимация между двумя состояниями (hover, focus). Нужен триггер. Animation — автономная анимация с @keyframes. Может работать постоянно. Transform — визуальные изменения: scale, rotate, translate, skew." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Transitions (переходы)", "description": "transition-property — какое свойство анимировать. transition-duration — длительность. transition-timing-function — функция времени. transition-delay — задержка.", "code": { "language": "css", "code": ".button {\n  background: #3498db;\n  color: white;\n  transition: all 0.3s ease;\n}\n\n.button:hover {\n  background: #2980b9;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0,0,0,0.2);\n}" } },
+          { "title": "2. Transform (трансформации)", "description": "translate — перемещение. rotate — вращение. scale — масштаб. skew — наклон. Комбинирование нескольких трансформаций.", "code": { "language": "css", "code": ".move { transform: translate(50px, 20px); }\n.rotate { transform: rotate(45deg); }\n.scale { transform: scale(1.2); }\n.complex {\n  transform: rotate(10deg) scale(1.1) translateX(10px);\n}" } },
+          { "title": "3. Keyframes (ключевые кадры)", "description": "@keyframes определяет последовательность анимации. animation-name, animation-duration, animation-iteration-count, animation-direction.", "code": { "language": "css", "code": "@keyframes bounce {\n  0%, 100% { transform: translateY(0); }\n  50% { transform: translateY(-20px); }\n}\n\n.element {\n  animation: bounce 1s ease infinite;\n}" } },
+          { "title": "4. Функции времени", "description": "ease — плавное ускорение/замедление. linear — равномерно. ease-in — ускорение. ease-out — замедление. cubic-bezier — пользовательская кривая.", "code": { "language": "css", "code": ".ease { transition: all 0.3s ease; }\n.linear { transition: all 0.3s linear; }\n.custom { transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Коллекция анимаций", "code": "@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n@keyframes pulse {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.05); }\n}\n\n@keyframes spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n\n.card {\n  animation: fadeIn 0.6s ease forwards;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.card:hover {\n  transform: translateY(-8px);\n  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);\n}\n\n.loader {\n  width: 40px;\n  height: 40px;\n  border: 4px solid #e2e8f0;\n  border-top-color: #3498db;\n  border-radius: 50%;\n  animation: spin 0.8s linear infinite;\n}\n\n.button {\n  padding: 12px 24px;\n  background: #3498db;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.button:hover {\n  background: #2980b9;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);\n}\n\n.button:active {\n  transform: translateY(0);\n}" },
+      {
+        "type": "editor",
+        "language": "css",
+        "previewHtml": "<div class=\"box hover-me\">Наведи на меня</div>\n<div class=\"box animated\">Я анимирован</div>\n<div class=\"spinner\"></div>",
+        "initialCode": "/* Стилизуйте блок */\n.box {\n  width: 200px;\n  height: 80px;\n  background: #3498db;\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 20px;\n  border-radius: 8px;\n\n  /* Добавьте transition для transform и background */\n\n}\n\n/* При наведении: подъём вверх и изменение цвета */\n.hover-me:hover {\n\n}\n\n/* Создайте @keyframes pulse для .animated */\n@keyframes pulse {\n\n}\n\n.animated {\n\n}\n\n/* Создайте спиннер — вращающийся круг */\n.spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid #e2e8f0;\n  border-top-color: #3498db;\n  border-radius: 50%;\n  margin: 20px;\n\n  /* Добавьте анимацию вращения */\n\n}",
+        "instructions": "Добавьте transition к .box для transform и background-color. При :hover блок поднимается вверх и меняет цвет. Создайте @keyframes pulse для пульсации .animated. Создайте вращающийся спиннер с помощью @keyframes и border."
+      }
+    ]
+  }
+]

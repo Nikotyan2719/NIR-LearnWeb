@@ -1,7 +1,6 @@
 import type { Comment } from "~/types";
 
 export const useAppStore = defineStore("app", () => {
-  const route = useRoute();
   const data = ref({
     comments: [
       {
@@ -21,75 +20,14 @@ export const useAppStore = defineStore("app", () => {
     ] as Comment[],
   });
 
-  const navigation = computed(() => [
-    {
-      label: "Основы HTML, JS и CSS",
-      to: "/education/start",
-      class: route.path.includes("/education/start") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-    },
-    {
-      label: "HTML",
-      children: [
-        {
-          label: "Основы HTML",
-          to: "/education/html/basics",
-          class: route.path.includes("/html/basics") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Формы",
-          to: "/education/html/forms",
-          class: route.path.includes("/html/forms") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Семантика",
-          to: "/education/html/semantic",
-          class: route.path.includes("/html/semantic") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-      ],
-    },
-    {
-      label: "JavaScript",
-      children: [
-        {
-          label: "Типы данных",
-          to: "/education/js/types",
-          class: route.path.includes("/js/types") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Операции",
-          to: "/education/js/operation",
-          class: route.path.includes("/js/operation") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Функции",
-          to: "/education/js/functions",
-          class: route.path.includes("/js/functions") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-      ],
-    },
-    {
-      label: "CSS",
-      children: [
-        {
-          label: "Селекторы",
-          to: "/education/css/selectors",
-          class: route.path.includes("/css/selectors") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Позиционирование",
-          to: "/education/css/position",
-          class: route.path.includes("/css/position") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-        {
-          label: "Flex",
-          to: "/education/css/flex",
-          class: route.path.includes("/css/flex") && "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400",
-        },
-      ],
-    },
-  ]);
+  const navigation = computed(() => {
+    const { getNavigation } = useLessons();
+    return getNavigation();
+  });
 
-  const comments = computed<Comment[]>(() => data.value.comments.reverse());
+  const comments = computed<Comment[]>(() =>
+    [...data.value.comments].reverse(),
+  );
 
   const addComment = (comment: Omit<Comment, "id" | "date">) => {
     const newComment: Comment = {
@@ -97,7 +35,7 @@ export const useAppStore = defineStore("app", () => {
       id: Date.now().toString(),
       date: new Date().toISOString(),
     };
-    comments.value.push(newComment);
+    data.value.comments.push(newComment);
     return newComment;
   };
 

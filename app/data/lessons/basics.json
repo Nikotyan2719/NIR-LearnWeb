@@ -1,0 +1,49 @@
+[
+  {
+    "id": "basics-start",
+    "slug": "start",
+    "title": "Основы HTML, JS и CSS",
+    "description": "Введение в три основные технологии веб-разработки",
+    "order": 1,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "HTML (Язык разметки гипертекста)" },
+      { "type": "text", "content": "HTML (HyperText Markup Language) — стандартизированный язык разметки документов, разработанный консорциумом W3C. Это фундаментальная технология, лежащая в основе Всемирной паутины, которая определяет структуру и семантическое содержание веб-страниц." },
+      { "type": "callout", "variant": "info", "title": "📜 Историческая справка", "content": "HTML был создан Тимом Бернерсом-Ли в 1991 году. Первая версия содержала всего 18 тегов. Современный HTML5 включает более 100 элементов, поддерживает мультимедиа и API для сложных веб-приложений." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Элементы и теги", "description": "HTML-документ состоит из элементов, обозначаемых тегами. Теги бывают парные и одиночные.", "code": { "language": "html", "code": "<h1>Заголовок</h1>" } },
+          { "title": "2. Атрибуты", "description": "Атрибуты предоставляют дополнительную информацию об элементах.", "code": { "language": "html", "code": "<a href=\"https://example.com\" target=\"_blank\">Ссылка</a>" } },
+          { "title": "3. Семантика", "description": "Семантические элементы HTML5 (header, nav, section, article, footer) делают код понятнее." }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Полная структура HTML5 документа", "code": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Моя первая страница</title>\n  </head>\n  <body>\n    <h1>Привет, мир!</h1>\n    <p>Это абзац текста.</p>\n  </body>\n</html>" },
+
+      { "type": "heading", "level": 2, "content": "CSS (Каскадные таблицы стилей)" },
+      { "type": "text", "content": "CSS (Cascading Style Sheets) — формальный язык описания внешнего вида веб-документов. CSS позволяет отделить содержимое от его представления. Современный CSS3 включает анимации, переходы и адаптивный дизайн." },
+      { "type": "callout", "variant": "advanced", "title": "📈 Эволюция CSS", "content": "CSS был предложен Хоконом Виумом Ли в 1994 году. Современный CSS поддерживает сложные анимации, кастомные свойства, Grid и Flexbox." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Селекторы и специфичность", "description": "Селекторы определяют, к каким элементам применяются стили.", "code": { "language": "css", "code": ".element { color: blue; }\n#unique { color: red; }\n* { box-sizing: border-box; }" } },
+          { "title": "2. Блочная модель", "description": "Каждый элемент — прямоугольный блок из margin, border, padding и content.", "code": { "language": "css", "code": ".box {\n  width: 300px;\n  padding: 20px;\n  border: 5px solid #333;\n  margin: 10px;\n  box-sizing: border-box;\n}" } },
+          { "title": "3. Flexbox", "description": "Одномерная модель для распределения пространства.", "code": { "language": "css", "code": ".container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 1rem;\n}" } }
+        ]
+      },
+      { "type": "code", "language": "css", "label": "Пример CSS", "code": "h1 {\n  color: #2d3748;\n  font-size: 2rem;\n  font-family: Arial, sans-serif;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 1rem;\n}" },
+
+      { "type": "heading", "level": 2, "content": "JavaScript" },
+      { "type": "text", "content": "JavaScript — высокоуровневый, интерпретируемый язык программирования. Позволяет создавать интерактивные веб-страницы, SPA, серверные и мобильные приложения." },
+      { "type": "callout", "variant": "tip", "title": "🔄 История и эволюция", "content": "JavaScript создан Бренданом Эйхом в 1995 году. Современный JS — мультипарадигменный язык, поддерживающий ООП, функциональное и императивное программирование." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Типы данных и переменные", "description": "JavaScript имеет динамическую типизацию. let, const, var.", "code": { "language": "javascript", "code": "const name = 'Иван';\nlet age = 25;\n\nconst num = 42;\nconst str = 'Привет';\nconst bool = true;" } },
+          { "title": "2. Функции и замыкания", "description": "Функции — объекты первого класса.", "code": { "language": "javascript", "code": "function greet(name) {\n  return `Привет, ${name}!`;\n}\n\nconst add = (a, b) => a + b;" } },
+          { "title": "3. Работа с DOM", "description": "Document Object Model — интерфейс для HTML документов.", "code": { "language": "javascript", "code": "const el = document.getElementById('id');\ndocument.querySelectorAll('.class');\nel.addEventListener('click', (e) => {\n  console.log('Клик!');\n});" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Пример JavaScript", "code": "const button = document.querySelector('button');\n\nbutton.addEventListener('click', () => {\n  console.log('Кнопка нажата!');\n  document.body.style.backgroundColor = 'lightblue';\n});\n\nlet message = 'Привет';\nconst name = 'Пользователь';\n\nfunction greet() {\n  return `${message}, ${name}!`;\n}\n\nconsole.log(greet());" }
+    ]
+  }
+]

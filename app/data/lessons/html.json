@@ -1,0 +1,211 @@
+[
+  {
+    "id": "html-basics",
+    "slug": "basics",
+    "title": "Основы HTML",
+    "description": "Структура документа, теги и атрибуты HTML",
+    "order": 1,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Введение в HTML" },
+      { "type": "text", "content": "HTML (HyperText Markup Language) — стандартный язык разметки для создания веб-страниц. Это основа веб-разработки, которая определяет структуру и содержимое веб-страниц. HTML использует теги для обозначения различных элементов на странице." },
+      { "type": "callout", "variant": "info", "title": "📜 История HTML", "content": "1991 — Тим Бернерс-Ли создал HTML. 1995 — HTML 2.0 (первая официальная версия). 1997 — HTML 3.2 (поддержка таблиц и форм). 1999 — HTML 4.01. 2014 — HTML5 (современный стандарт)." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Структура документа", "description": "HTML-документ начинается с <!DOCTYPE html>, содержит <head> для метаданных и <body> для содержимого.", "code": { "language": "html", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Заголовок страницы</title>\n</head>\n<body>\n    <h1>Привет, мир!</h1>\n</body>\n</html>" } },
+          { "title": "2. Заголовки и текст", "description": "<h1>—<h6> для заголовков, <p> для абзацев, <span> для строчных элементов.", "code": { "language": "html", "code": "<h1>Главный заголовок</h1>\n<h2>Подзаголовок</h2>\n<p>Абзац текста</p>\n<span>Строчный элемент</span>" } },
+          { "title": "3. Глобальные атрибуты", "description": "class — для стилизации, id — уникальный идентификатор, style — встроенные стили, data-* — пользовательские данные, title — всплывающая подсказка.", "code": { "language": "html", "code": "<div class=\"container\" id=\"main\"\n     data-role=\"content\"\n     title=\"Подсказка\">\n  Содержимое\n</div>" } },
+          { "title": "4. Специфичные атрибуты", "description": "href — адрес ссылки, src — путь к ресурсу, alt — альтернативный текст, target — где открывать ссылку, placeholder — подсказка в поле.", "code": { "language": "html", "code": "<a href=\"https://example.com\" target=\"_blank\">\n  Ссылка\n</a>\n<img src=\"photo.jpg\" alt=\"Фото\">" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Полная структура HTML5 документа", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"description\" content=\"Описание страницы\">\n    <title>Заголовок страницы</title>\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"script.js\" defer></script>\n</head>\n<body>\n    <header>\n        <h1>Привет, мир!</h1>\n        <nav>...навигация...</nav>\n    </header>\n\n    <main>\n        <article>\n            <h2>Заголовок статьи</h2>\n            <p>Моя первая веб-страница с семантической разметкой.</p>\n        </article>\n    </main>\n\n    <footer>\n        <p>&copy; 2023 Мой сайт</p>\n    </footer>\n</body>\n</html>" },
+      {
+        "type": "callout", "variant": "tip", "title": "🏆 Лучшие практики HTML", "content": "Всегда указывайте <!DOCTYPE html>. Используйте семантические теги. Указывайте атрибут alt для изображений. Используйте id только для уникальных элементов. Проверяйте валидность через validator.w3.org. Используйте отступы для читаемости."
+      }
+    ]
+  },
+  {
+    "id": "html-forms",
+    "slug": "forms",
+    "title": "HTML Формы",
+    "description": "Типы полей ввода, валидация и отправка форм",
+    "order": 2,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Формы в HTML" },
+      { "type": "text", "content": "HTML формы используются для сбора пользовательского ввода и отправки его на сервер. Они являются основным способом взаимодействия пользователя с веб-приложением." },
+      { "type": "callout", "variant": "info", "title": "🔑 Основные концепции", "content": "Элементы управления: поля ввода, кнопки, переключатели. Методы отправки: GET (по умолчанию) и POST. Кодировка данных: application/x-www-form-urlencoded, multipart/form-data, text/plain. Валидация: на стороне клиента и сервера. Доступность: правильная разметка для скринридеров." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Базовая форма с валидацией", "description": "Форма с текстовыми полями, email и паролем, использующая встроенную валидацию HTML5.", "code": { "language": "html", "code": "<form action=\"/submit\" method=\"POST\" novalidate>\n  <label for=\"username\">Имя пользователя</label>\n  <input type=\"text\" id=\"username\" name=\"username\"\n         required minlength=\"3\" maxlength=\"30\"\n         pattern=\"[A-Za-z0-9_]+\">\n\n  <label for=\"email\">Email</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required>\n\n  <button type=\"submit\">Зарегистрироваться</button>\n</form>" } },
+          { "title": "2. Типы полей ввода", "description": "text, password, email, tel, number, url, date, time, datetime-local, checkbox, radio, file, color, range.", "code": { "language": "html", "code": "<input type=\"text\" placeholder=\"Текст\">\n<input type=\"email\" placeholder=\"email@mail.ru\">\n<input type=\"number\" min=\"0\" max=\"100\">\n<input type=\"date\">\n<input type=\"checkbox\">\n<select><option>Пункт 1</option></select>" } },
+          { "title": "3. Валидация форм", "description": "required — обязательное поле, minlength/maxlength — длина, min/max — диапазон чисел, pattern — регулярное выражение, type — проверка формата.", "code": { "language": "html", "code": "<input type=\"text\" required minlength=\"3\">\n<input type=\"email\" required>\n<input type=\"number\" min=\"0\" max=\"100\">\n<input type=\"text\" pattern=\"[A-Za-z]+\">" } },
+          { "title": "4. Дополнительные возможности", "description": "fieldset/legend для группировки, datalist для автодополнения, output для результатов вычислений.", "code": { "language": "html", "code": "<fieldset>\n  <legend>Контактная информация</legend>\n  <input type=\"text\" name=\"name\">\n  <input type=\"email\" name=\"email\">\n</fieldset>\n\n<input list=\"countries\">\n<datalist id=\"countries\">\n  <option value=\"Россия\">\n  <option value=\"США\">\n</datalist>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Полная форма регистрации", "code": "<form action=\"/register\" method=\"POST\">\n  <div>\n    <label for=\"name\">Имя:</label>\n    <input type=\"text\" id=\"name\" name=\"name\" required>\n  </div>\n\n  <div>\n    <label for=\"email\">Email:</label>\n    <input type=\"email\" id=\"email\" name=\"email\" required>\n  </div>\n\n  <div>\n    <label for=\"password\">Пароль:</label>\n    <input type=\"password\" id=\"password\" name=\"password\"\n           required minlength=\"8\">\n  </div>\n\n  <div>\n    <label>\n      <input type=\"checkbox\" name=\"agree\" required>\n      Я согласен с условиями\n    </label>\n  </div>\n\n  <button type=\"submit\">Зарегистрироваться</button>\n</form>" },
+      { "type": "callout", "variant": "warning", "title": "🔒 Безопасность форм", "content": "Всегда проверяйте данные на сервере. Используйте CSRF-токены. Ограничивайте размер загружаемых файлов. Проверяйте MIME-типы. Используйте HTTPS. Экранируйте пользовательский ввод от XSS-атак." }
+    ]
+  },
+  {
+    "id": "html-semantic",
+    "slug": "semantic",
+    "title": "Семантические элементы HTML5",
+    "description": "Структурные элементы, доступность и ARIA",
+    "order": 3,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Семантическая разметка" },
+      { "type": "text", "content": "Семантическая разметка использует теги, которые описывают смысл контента, а не только его внешний вид. Это делает код более понятным для разработчиков и поисковых систем, а также улучшает доступность для пользователей с ограниченными возможностями." },
+      { "type": "callout", "variant": "info", "title": "❓ Почему важна семантика?", "content": "Доступность: скринридеры лучше понимают структуру. SEO: поисковые системы лучше индексируют контент. Поддержка: упрощает разработку и поддержку кода. Адаптивность: упрощает создание отзывчивых макетов." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Структурные элементы", "description": "header — шапка, nav — навигация, main — основное содержимое, article — независимый контент, section — тематическая группа, aside — боковая панель, footer — подвал.", "code": { "language": "html", "code": "<header>Шапка сайта</header>\n<nav>Навигация</nav>\n<main>\n  <article>Статья</article>\n  <section>Секция</section>\n</main>\n<aside>Боковая панель</aside>\n<footer>Подвал</footer>" } },
+          { "title": "2. Дополнительные семантические теги", "description": "figure/figcaption — контент с подписью, mark — выделенный текст, time — дата/время, details/summary — раскрывающийся блок, dialog — диалоговое окно.", "code": { "language": "html", "code": "<figure>\n  <img src=\"photo.jpg\" alt=\"Фото\">\n  <figcaption>Подпись</figcaption>\n</figure>\n\n<details>\n  <summary>Подробнее</summary>\n  <p>Развернутый текст</p>\n</details>\n\n<time datetime=\"2023-10-15\">15 октября</time>" } },
+          { "title": "3. ARIA-атрибуты", "description": "aria-label — текстовая метка, aria-expanded — раскрыто/скрыто, role — роль элемента, aria-current — текущий элемент.", "code": { "language": "html", "code": "<nav role=\"navigation\" aria-label=\"Основное меню\">\n  <ul role=\"menubar\">\n    <li role=\"none\">\n      <a href=\"/\" role=\"menuitem\"\n         aria-current=\"page\">Главная</a>\n    </li>\n  </ul>\n</nav>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Семантическая структура веб-страницы", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Мой блог</title>\n</head>\n<body>\n    <header class=\"site-header\">\n        <div class=\"logo\">Мой Блог</div>\n        <nav aria-label=\"Основное меню\">\n            <ul>\n                <li><a href=\"/\">Главная</a></li>\n                <li><a href=\"/about\">О нас</a></li>\n            </ul>\n        </nav>\n    </header>\n\n    <main>\n        <article class=\"blog-post\">\n            <header>\n                <h1>Название статьи</h1>\n                <time datetime=\"2023-10-15\">15 октября 2023</time>\n            </header>\n\n            <section class=\"post-content\">\n                <p>Содержание статьи...</p>\n                <figure>\n                    <img src=\"/images/post.jpg\" alt=\"Описание\">\n                    <figcaption>Подпись к изображению</figcaption>\n                </figure>\n            </section>\n\n            <footer>\n                <div class=\"tags\">\n                    <a href=\"/tag/html\" rel=\"tag\">HTML</a>\n                    <a href=\"/tag/css\" rel=\"tag\">CSS</a>\n                </div>\n            </footer>\n        </article>\n    </main>\n\n    <aside class=\"sidebar\">\n        <section>\n            <h2>О блоге</h2>\n            <p>Блог о веб-разработке.</p>\n        </section>\n    </aside>\n\n    <footer class=\"site-footer\">\n        <p>&copy; 2023 Мой Блог</p>\n    </footer>\n</body>\n</html>" },
+      { "type": "callout", "variant": "danger", "title": "❌ Частые ошибки", "content": "Использование <div> вместо семантических тегов. Несоответствие иерархии заголовков. Использование семантических тегов только для стилизации. Отсутствие alt-текстов для изображений. Игнорирование ARIA. Невалидная вложенность элементов." }
+    ]
+  },
+  {
+    "id": "html-tables",
+    "slug": "tables",
+    "title": "HTML Таблицы",
+    "description": "Структура таблиц, заголовки, объединение ячеек",
+    "order": 4,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Таблицы в HTML" },
+      { "type": "text", "content": "HTML таблицы используются для представления табличных данных — информации, организованной в строки и столбцы. Таблицы состоят из ячеек, сгруппированных в строки, с возможностью добавления заголовков и объединения ячеек." },
+      { "type": "callout", "variant": "info", "title": "🔑 Ключевые концепции", "content": "table — контейнер таблицы. thead, tbody, tfoot — логические разделы. tr — строка. th — заголовочная ячейка. td — обычная ячейка. colspan — объединение столбцов. rowspan — объединение строк. caption — заголовок таблицы." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Базовая таблица", "description": "Простая таблица с заголовком и данными.", "code": { "language": "html", "code": "<table>\n  <caption>Список студентов</caption>\n  <thead>\n    <tr>\n      <th>Имя</th>\n      <th>Возраст</th>\n      <th>Оценка</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Иван</td>\n      <td>20</td>\n      <td>5</td>\n    </tr>\n  </tbody>\n</table>" } },
+          { "title": "2. Объединение ячеек", "description": "colspan — объединение столбцов, rowspan — объединение строк.", "code": { "language": "html", "code": "<table>\n  <tr>\n    <th colspan=\"2\">Имя и Фамилия</th>\n  </tr>\n  <tr>\n    <td rowspan=\"2\">Иван</td>\n    <td>Иванов</td>\n  </tr>\n  <tr>\n    <td>Петров</td>\n  </tr>\n</table>" } },
+          { "title": "3. Полная структура таблицы", "description": "thead для заголовков, tbody для данных, tfoot для итогов.", "code": { "language": "html", "code": "<table>\n  <thead>\n    <tr><th>Товар</th><th>Цена</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Хлеб</td><td>50</td></tr>\n    <tr><td>Молоко</td><td>80</td></tr>\n  </tbody>\n  <tfoot>\n    <tr><th>Итого:</th><th>130</th></tr>\n  </tfoot>\n</table>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Расширенная таблица с объединением", "code": "<table border=\"1\">\n  <caption>Расписание занятий</caption>\n  <thead>\n    <tr>\n      <th>Время</th>\n      <th>Понедельник</th>\n      <th>Вторник</th>\n      <th>Среда</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>9:00</td>\n      <td colspan=\"2\">Математика (лекция)</td>\n      <td>Физика</td>\n    </tr>\n    <tr>\n      <td>11:00</td>\n      <td>Программирование</td>\n      <td rowspan=\"2\">Лаборатория</td>\n      <td>Английский</td>\n    </tr>\n    <tr>\n      <td>13:00</td>\n      <td>История</td>\n      <td>Химия</td>\n    </tr>\n  </tbody>\n</table>" },
+      {
+        "type": "editor",
+        "language": "html",
+        "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Таблица</title>\n</head>\n<body>\n  <h1>Моя таблица</h1>\n\n  <!-- Создайте таблицу с 3 столбцами: Имя, Город, Возраст -->\n  <!-- Добавьте минимум 3 строки данных -->\n  <!-- Используйте thead, tbody и tfoot -->\n  <!-- В tfoot добавьте строку с colspan -->\n\n</body>\n</html>",
+        "instructions": "Создайте таблицу с заголовками (Имя, Город, Возраст), минимум 3 строками данных в tbody и итоговой строкой в tfoot. Используйте colspan для объединения ячеек в tfoot."
+      }
+    ]
+  },
+  {
+    "id": "html-media",
+    "slug": "media",
+    "title": "Мультимедиа в HTML",
+    "description": "Изображения, аудио, видео и адаптивные медиа",
+    "order": 5,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Мультимедиа элементы" },
+      { "type": "text", "content": "HTML5 предоставляет встроенную поддержку мультимедийного контента: изображения, аудио и видео можно встраивать без сторонних плагинов. Элементы picture, audio и video дают полный контроль над воспроизведением и адаптивностью медиа." },
+      { "type": "callout", "variant": "tip", "title": "💡 Советы по медиа", "content": "Всегда указывайте атрибут alt для изображений. Используйте picture для адаптивных изображений. Указывайте несколько форматов (webp, jpg) для лучшей совместимости. Добавляйте controls для audio и video. Оптимизируйте размеры файлов." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Изображения", "description": "img — базовое изображение, picture — адаптивные изображения с источниками, figure — контент с подписью.", "code": { "language": "html", "code": "<img src=\"photo.jpg\" alt=\"Описание\" width=\"600\" height=\"400\">\n\n<picture>\n  <source srcset=\"photo.webp\" type=\"image/webp\">\n  <source srcset=\"photo.jpg\" type=\"image/jpeg\">\n  <img src=\"photo.jpg\" alt=\"Описание\">\n</picture>\n\n<figure>\n  <img src=\"photo.jpg\" alt=\"Описание\">\n  <figcaption>Подпись к фото</figcaption>\n</figure>" } },
+          { "title": "2. Видео", "description": "video — встраивание видео с элементами управления. Поддерживаемые форматы: MP4, WebM, Ogg.", "code": { "language": "html", "code": "<video width=\"640\" height=\"360\" controls poster=\"preview.jpg\">\n  <source src=\"video.mp4\" type=\"video/mp4\">\n  <source src=\"video.webm\" type=\"video/webm\">\n  Ваш браузер не поддерживает видео.\n</video>" } },
+          { "title": "3. Аудио", "description": "audio — встраивание аудиоконтента. Поддерживаемые форматы: MP3, WAV, Ogg.", "code": { "language": "html", "code": "<audio controls>\n  <source src=\"song.mp3\" type=\"audio/mpeg\">\n  <source src=\"song.ogg\" type=\"audio/ogg\">\n  Ваш браузер не поддерживает аудио.\n</audio>" } },
+          { "title": "4. iframe и встраивание", "description": "iframe — встроенный фрейм для контента с других сайтов, embed и object для плагинов.", "code": { "language": "html", "code": "<iframe src=\"https://example.com\"\n        width=\"600\" height=\"400\"\n        title=\"Встроенная страница\"\n        loading=\"lazy\">\n</iframe>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Полная мультимедийная страница", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Мультимедиа</title>\n</head>\n<body>\n    <h1>Галерея мультимедиа</h1>\n\n    <figure>\n        <picture>\n            <source srcset=\"hero.webp\" type=\"image/webp\">\n            <img src=\"hero.jpg\" alt=\"Главное фото\" loading=\"lazy\">\n        </picture>\n        <figcaption>Главное изображение</figcaption>\n    </figure>\n\n    <section>\n        <h2>Видео</h2>\n        <video controls width=\"100%\" poster=\"preview.jpg\">\n            <source src=\"intro.mp4\" type=\"video/mp4\">\n            <source src=\"intro.webm\" type=\"video/webm\">\n        </video>\n    </section>\n\n    <section>\n        <h2>Аудио</h2>\n        <audio controls>\n            <source src=\"podcast.mp3\" type=\"audio/mpeg\">\n        </audio>\n    </section>\n</body>\n</html>" },
+      {
+        "type": "editor",
+        "language": "html",
+        "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Медиа страница</title>\n</head>\n<body>\n  <h1>Мои медиа</h1>\n\n  <!-- Добавьте изображение с alt-текстом -->\n  <!-- Добавьте видео с элементами управления -->\n  <!-- Добавьте аудиоплеер -->\n  <!-- Используйте figure и figcaption -->\n\n</body>\n</html>",
+        "instructions": "Создайте страницу с изображением (используйте тег img с атрибутом alt), видеоплеером (video с controls) и аудиоплеером (audio с controls). Оберните каждый медиа-элемент в figure с figcaption."
+      }
+    ]
+  },
+  {
+    "id": "html-links",
+    "slug": "links",
+    "title": "Ссылки и навигация",
+    "description": "Тег a, якорные ссылки, атрибуты ссылок",
+    "order": 6,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Ссылки и навигация в HTML" },
+      { "type": "text", "content": "Гиперссылки — фундаментальная часть веба. Тег <a> создаёт ссылки на другие страницы, файлы, электронные адреса, телефонные номера и места на текущей странице. Навигация строится на основе ссылок, объединённых в списки внутри элемента <nav>." },
+      { "type": "callout", "variant": "info", "title": "🔑 Типы ссылок", "content": "Абсолютные: полный URL (https://example.com). Относительные: путь относительно текущей страницы (about.html). Якорные: ссылка на элемент страницы (#section). Почтовые: mailto:user@example.com. Телефонные: tel:+1234567890." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Базовые ссылки", "description": "Атрибут href задаёт адрес ссылки, target — где открывать, rel — отношение к linked-ресурсу.", "code": { "language": "html", "code": "<a href=\"https://example.com\">Внешняя ссылка</a>\n<a href=\"about.html\">Внутренняя ссылка</a>\n<a href=\"#contacts\">Якорная ссылка</a>\n<a href=\"mailto:mail@example.com\">Написать email</a>\n<a href=\"tel:+71234567890\">Позвонить</a>" } },
+          { "title": "2. Атрибут target", "description": "_self — в текущем окне (по умолчанию), _blank — в новой вкладке, _parent — в родительском фрейме, _top — в полном окне.", "code": { "language": "html", "code": "<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Открыть в новой вкладке\n</a>" } },
+          { "title": "3. Навигация", "description": "Элемент nav содержит навигационные ссылки. Обычно используется со списками.", "code": { "language": "html", "code": "<nav aria-label=\"Основное меню\">\n  <ul>\n    <li><a href=\"/\" aria-current=\"page\">Главная</a></li>\n    <li><a href=\"/about\">О нас</a></li>\n    <li><a href=\"/contact\">Контакты</a></li>\n  </ul>\n</nav>" } },
+          { "title": "4. Скачивание файлов", "description": "Атрибут download указывает, что ссылка ведёт к скачиванию файла.", "code": { "language": "html", "code": "<a href=\"document.pdf\" download=\"Документ.pdf\">\n  Скачать PDF\n</a>\n<a href=\"image.jpg\" download>\n  Скачать изображение\n</a>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Полная навигация сайта", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Навигация</title>\n</head>\n<body>\n    <header>\n        <nav aria-label=\"Основное меню\">\n            <ul>\n                <li><a href=\"/\" aria-current=\"page\">Главная</a></li>\n                <li><a href=\"/about\">О нас</a></li>\n                <li><a href=\"/services\">Услуги</a></li>\n                <li><a href=\"/contact\">Контакты</a></li>\n            </ul>\n        </nav>\n    </header>\n\n    <main id=\"content\">\n        <nav aria-label=\"Хлебные крошки\">\n            <ol>\n                <li><a href=\"/\">Главная</a></li>\n                <li><a href=\"/services\">Услуги</a></li>\n                <li>Веб-разработка</li>\n            </ol>\n        </nav>\n\n        <h1>Веб-разработка</h1>\n        <p>Подробнее на <a href=\"https://developer.mozilla.org\" target=\"_blank\" rel=\"noopener\">MDN</a>.</p>\n    </main>\n\n    <footer>\n        <a href=\"document.pdf\" download>Скачать прайс-лист</a>\n        <a href=\"mailto:info@example.com\">info@example.com</a>\n    </footer>\n</body>\n</html>" },
+      {
+        "type": "editor",
+        "language": "html",
+        "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Навигация</title>\n</head>\n<body>\n  <header>\n    <!-- Создайте навигацию с 4 ссылками -->\n  </header>\n\n  <main id=\"content\">\n    <h1>Добро пожаловать</h1>\n    <!-- Добавьте якорные ссылки на секции -->\n\n    <section id=\"about\">\n      <h2>О нас</h2>\n      <p>Информация о компании.</p>\n    </section>\n\n    <section id=\"contacts\">\n      <h2>Контакты</h2>\n      <!-- Добавьте mailto и tel ссылки -->\n    </section>\n  </main>\n</body>\n</html>",
+        "instructions": "Создайте навигацию (nav) с 4 ссылками, якорные ссылки на секции #about и #contacts, ссылку mailto для email и ссылку tel для телефона. Используйте aria-current для текущей страницы."
+      }
+    ]
+  },
+  {
+    "id": "html-lists",
+    "slug": "lists",
+    "title": "HTML Списки",
+    "description": "Маркированные, нумерованные списки и списки определений",
+    "order": 7,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Списки в HTML" },
+      { "type": "text", "content": "HTML предоставляет три типа списков: маркированные (<ul>), нумерованные (<ol>) и списки определений (<dl>). Списки могут вкладываться друг в друга для создания сложных иерархических структур." },
+      { "type": "callout", "variant": "tip", "title": "💡 Когда использовать", "content": "ul — порядок не важен (навигация, перечень функций). ol — порядок важен (инструкции, шаги). dl — пары термин-определение (словари, характеристики). Вложенные списки — для иерархических данных (меню с подменю)." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Маркированный список (ul)", "description": "Каждый элемент помечается маркером. Тип маркера можно изменить через CSS list-style-type.", "code": { "language": "html", "code": "<ul>\n  <li>Первый элемент</li>\n  <li>Второй элемент</li>\n  <li>Третий элемент</li>\n</ul>" } },
+          { "title": "2. Нумерованный список (ol)", "description": "Элементы нумеруются автоматически. Атрибуты: start — начальный номер, reversed — обратный порядок, type — тип нумерации.", "code": { "language": "html", "code": "<ol>\n  <li>Шаг первый</li>\n  <li>Шаг второй</li>\n  <li>Шаг третий</li>\n</ol>\n\n<ol type=\"A\" start=\"3\">\n  <li>Пункт C</li>\n  <li>Пункт D</li>\n</ol>" } },
+          { "title": "3. Список определений (dl)", "description": "dl — контейнер, dt — термин, dd — определение. Один термин может иметь несколько определений.", "code": { "language": "html", "code": "<dl>\n  <dt>HTML</dt>\n  <dd>Язык разметки гипертекста</dd>\n\n  <dt>CSS</dt>\n  <dd>Каскадные таблицы стилей</dd>\n  <dd>Язык описания внешнего вида</dd>\n</dl>" } },
+          { "title": "4. Вложенные списки", "description": "Списки можно вкладывать друг в друга для создания иерархии.", "code": { "language": "html", "code": "<ul>\n  <li>Фрукты\n    <ul>\n      <li>Яблоки</li>\n      <li>Груши</li>\n    </ul>\n  </li>\n  <li>Овощи\n    <ol>\n      <li>Морковь</li>\n      <li>Картофель</li>\n    </ol>\n  </li>\n</ul>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Сложная структура списков", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Списки</title>\n</head>\n<body>\n    <h1>Рецепт: Борщ</h1>\n\n    <h2>Ингредиенты</h2>\n    <ul>\n        <li>Свёкла — 2 шт.</li>\n        <li>Капуста — 300 г</li>\n        <li>Картофель — 3 шт.</li>\n        <li>Морковь — 1 шт.</li>\n    </ul>\n\n    <h2>Приготовление</h2>\n    <ol>\n        <li>Нарежьте овощи</li>\n        <li>Отварите мясо</li>\n        <li>Добавьте овощи\n            <ol type=\"a\">\n                <li>Сначала свёклу</li>\n                <li>Затем картофель</li>\n                <li>В конце капусту</li>\n            </ol>\n        </li>\n        <li>Подавайте со сметаной</li>\n    </ol>\n\n    <h2>Термины</h2>\n    <dl>\n        <dt>Пассерование</dt>\n        <dd>Обжаривание овощей на масле</dd>\n        <dt>Бульон</dt>\n        <dd>Отвар на основе мяса</dd>\n    </dl>\n</body>\n</html>" },
+      {
+        "type": "editor",
+        "language": "html",
+        "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Списки</title>\n</head>\n<body>\n  <h1>Мои списки</h1>\n\n  <!-- Создайте маркированный список с 3 элементами -->\n\n  <!-- Создайте нумерованный список с 3 шагами -->\n\n  <!-- Создайте вложенный список (ul внутри ol) -->\n\n  <!-- Создайте список определений с 2 терминами -->\n\n</body>\n</html>",
+        "instructions": "Создайте маркированный список (ul) с 3 элементами, нумерованный список (ol) с 3 шагами, вложенный список (ul внутри одного из элементов ol) и список определений (dl) с 2 терминами и их определениями."
+      }
+    ]
+  },
+  {
+    "id": "html-structure",
+    "slug": "structure",
+    "title": "Группировка и структура",
+    "description": "div, span, section и группирующие элементы",
+    "order": 8,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Группировка и структура в HTML" },
+      { "type": "text", "content": "Для организации контента HTML предоставляет элементы группировки: div и span — универсальные контейнеры, а также семантические элементы section, article, header, footer, main, aside. Правильная структура упрощает стилизацию и доступность." },
+      { "type": "callout", "variant": "info", "title": "🔑 Разница между div и section", "content": "div — универсальный блочный контейнер без семантики. section — тематическая группировка с заголовком. Используйте section, когда содержимое имеет логический заголовок. Используйте div для стилизации и позиционирования." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. div — блочный контейнер", "description": "Универсальный блочный элемент. Занимает всю ширину. Используется для группировки и стилизации.", "code": { "language": "html", "code": "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"column\">\n      <h2>Колонка 1</h2>\n      <p>Содержимое</p>\n    </div>\n    <div class=\"column\">\n      <h2>Колонка 2</h2>\n      <p>Содержимое</p>\n    </div>\n  </div>\n</div>" } },
+          { "title": "2. span — строчный контейнер", "description": "Универсальный строчный элемент. Не переносит строку. Используется для выделения части текста.", "code": { "language": "html", "code": "<p>Цена: <span class=\"price\">500</span> рублей</p>\n<p>Статус: <span class=\"status active\">Активен</span></p>\n<p><span style=\"color: red;\">Важно!</span> Прочитайте внимательно.</p>" } },
+          { "title": "3. section — тематическая группа", "description": "Семантический элемент для группировки связанного контента. Обычно содержит заголовок.", "code": { "language": "html", "code": "<section>\n  <h2>Наши услуги</h2>\n  <p>Описание услуг компании.</p>\n</section>\n\n<section>\n  <h2>Контакты</h2>\n  <p>Свяжитесь с нами.</p>\n</section>" } },
+          { "title": "4. article — независимый контент", "description": "Самостоятельный контент, который можно переиспользовать: статья, пост блога, комментарий.", "code": { "language": "html", "code": "<article>\n  <header>\n    <h2>Заголовок статьи</h2>\n    <time datetime=\"2023-10-15\">15.10.2023</time>\n  </header>\n  <p>Текст статьи...</p>\n  <footer>\n    <p>Автор: Иван</p>\n  </footer>\n</article>" } }
+        ]
+      },
+      { "type": "code", "language": "html", "label": "Типичная структура веб-страницы", "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Структура страницы</title>\n</head>\n<body>\n    <div class=\"wrapper\">\n        <header class=\"site-header\">\n            <div class=\"header-inner\">\n                <span class=\"logo\">Логотип</span>\n                <nav>Навигация</nav>\n            </div>\n        </header>\n\n        <main>\n            <section class=\"hero\">\n                <h1>Заголовок страницы</h1>\n                <p>Описание <span class=\"highlight\">важного</span> содержимого.</p>\n            </section>\n\n            <section class=\"features\">\n                <h2>Возможности</h2>\n                <div class=\"grid\">\n                    <article class=\"card\">\n                        <h3>Карточка 1</h3>\n                        <p>Описание.</p>\n                    </article>\n                    <article class=\"card\">\n                        <h3>Карточка 2</h3>\n                        <p>Описание.</p>\n                    </article>\n                </div>\n            </section>\n        </main>\n\n        <footer class=\"site-footer\">\n            <div class=\"footer-inner\">\n                <span>&copy; 2023</span>\n            </div>\n        </footer>\n    </div>\n</body>\n</html>" },
+      {
+        "type": "editor",
+        "language": "html",
+        "initialCode": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Структура</title>\n</head>\n<body>\n  <!-- Создайте обёртку div с классом wrapper -->\n\n  <!-- Добавьте header с логотипом (span) и nav -->\n\n  <!-- Добавьте main с двумя section -->\n  <!-- Каждый section содержит h2 и article -->\n\n  <!-- Добавьте footer -->\n\n</body>\n</html>",
+        "instructions": "Создайте структуру страницы: div.wrapper с header (span.logo и nav), main с двумя section (каждый с h2 и article внутри), footer. Используйте семантические элементы section и article, а div и span — для стилизации."
+      }
+    ]
+  }
+]

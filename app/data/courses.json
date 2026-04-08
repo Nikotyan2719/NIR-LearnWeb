@@ -1,0 +1,61 @@
+{
+  "topics": [
+    {
+      "id": "basics",
+      "title": "Основы",
+      "icon": "i-lucide-book-open",
+      "order": 1,
+      "lessons": [
+        { "id": "basics-start", "title": "Основы HTML, JS и CSS" }
+      ]
+    },
+    {
+      "id": "html",
+      "title": "HTML",
+      "icon": "i-lucide-file-code",
+      "order": 2,
+      "lessons": [
+        { "id": "html-basics", "title": "Основы HTML" },
+        { "id": "html-forms", "title": "Формы" },
+        { "id": "html-semantic", "title": "Семантика" },
+        { "id": "html-tables", "title": "Таблицы" },
+        { "id": "html-media", "title": "Медиа" },
+        { "id": "html-links", "title": "Ссылки и навигация" },
+        { "id": "html-lists", "title": "Списки" },
+        { "id": "html-structure", "title": "Группировка и структура" }
+      ]
+    },
+    {
+      "id": "js",
+      "title": "JavaScript",
+      "icon": "i-lucide-code",
+      "order": 3,
+      "lessons": [
+        { "id": "js-types", "title": "Типы данных" },
+        { "id": "js-operations", "title": "Операции" },
+        { "id": "js-functions", "title": "Функции" },
+        { "id": "js-arrays", "title": "Массивы" },
+        { "id": "js-objects", "title": "Объекты" },
+        { "id": "js-strings", "title": "Строки" },
+        { "id": "js-conditions", "title": "Условия и циклы" },
+        { "id": "js-dom", "title": "DOM и события" }
+      ]
+    },
+    {
+      "id": "css",
+      "title": "CSS",
+      "icon": "i-lucide-palette",
+      "order": 4,
+      "lessons": [
+        { "id": "css-selectors", "title": "Селекторы" },
+        { "id": "css-position", "title": "Позиционирование" },
+        { "id": "css-flex", "title": "Flex" },
+        { "id": "css-boxmodel", "title": "Box Model" },
+        { "id": "css-grid", "title": "Grid" },
+        { "id": "css-colors", "title": "Цвета и фоны" },
+        { "id": "css-typography", "title": "Типографика" },
+        { "id": "css-animations", "title": "Анимации и переходы" }
+      ]
+    }
+  ]
+}

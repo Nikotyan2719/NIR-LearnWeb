@@ -1,0 +1,226 @@
+[
+  {
+    "id": "js-types",
+    "slug": "types",
+    "title": "Типы данных в JavaScript",
+    "description": "Примитивные и ссылочные типы, typeof, преобразование типов",
+    "order": 1,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Типы данных в JavaScript" },
+      { "type": "text", "content": "JavaScript — язык с динамической типизацией, что означает, что тип переменной определяется автоматически во время выполнения программы. В JavaScript существует 8 основных типов данных: 7 примитивных типов и объекты." },
+      { "type": "callout", "variant": "info", "title": "🔍 Особенности типов", "content": "JavaScript использует динамическую типизацию — переменная может менять тип. Оператор typeof помогает определить тип. typeof null возвращает \"object\" — это историческая ошибка языка. let и const имеют блочную область видимости." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Number", "description": "Числовой тип. Включает целые числа, числа с плавающей точкой, Infinity, -Infinity и NaN.", "code": { "language": "javascript", "code": "let num = 42;\nlet float = 3.14;\nlet inf = Infinity;\nlet notANumber = NaN;" } },
+          { "title": "2. String", "description": "Строковый тип. Одинарные, двойные или обратные кавычки (шаблонные строки).", "code": { "language": "javascript", "code": "let str1 = 'Привет';\nlet str2 = \"Мир\";\nlet template = `Строка: ${str1} ${str2}!`;" } },
+          { "title": "3. Boolean, Null, Undefined", "description": "Boolean: true/false. Null: отсутствие значения. Undefined: переменная объявлена, но не инициализирована.", "code": { "language": "javascript", "code": "let isTrue = true;\nlet isFalse = false;\nlet empty = null;\nlet x;\nconsole.log(typeof x); // \"undefined\"" } },
+          { "title": "4. Symbol, BigInt и Object", "description": "Symbol — уникальный идентификатор. BigInt — большие числа. Object — коллекция пар ключ-значение, включая массивы и функции.", "code": { "language": "javascript", "code": "const id = Symbol('id');\nconst big = 123456789012345678901234567890n;\n\nlet user = { name: 'Иван', age: 30 };\nlet fruits = ['Яблоко', 'Апельсин'];" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Проверка типов", "code": "console.log(typeof 42);          // \"number\"\nconsole.log(typeof 'text');       // \"string\"\nconsole.log(typeof true);         // \"boolean\"\nconsole.log(typeof undefined);    // \"undefined\"\nconsole.log(typeof null);         // \"object\" (ошибка)\nconsole.log(typeof []);           // \"object\"\nconsole.log(Array.isArray([]));   // true\nconsole.log(Object.prototype.toString.call([])); // \"[object Array]\"" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// Создайте переменные разных типов\nconst num = 42;\nconst str = 'Привет';\nconst bool = true;\nconst nothing = null;\nlet notDefined;\nconst arr = [1, 2, 3];\nconst obj = { name: 'Иван', age: 25 };\n\n// Выведите типы в консоль\nconsole.log(typeof num);\nconsole.log(typeof str);\nconsole.log(typeof bool);\nconsole.log(typeof nothing);\nconsole.log(typeof notDefined);\nconsole.log(Array.isArray(arr));\n\n// Попробуйте изменить значение и проверить тип\n",
+        "instructions": "Создайте переменные разных типов: number, string, boolean, null, undefined, array, object. Выведите их типы через typeof. Попробуйте изменить значение переменных и проверить, как меняется тип."
+      }
+    ]
+  },
+  {
+    "id": "js-operations",
+    "slug": "operations",
+    "title": "Операции в JavaScript",
+    "description": "Арифметические, сравнения, логические операции и приведение типов",
+    "order": 2,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Операции в JavaScript" },
+      { "type": "text", "content": "JavaScript поддерживает различные типы операций: арифметические, сравнения, логические и другие. Понимание этих операций является основой для написания эффективного кода." },
+      { "type": "callout", "variant": "info", "title": "🔧 Категории операций", "content": "Арифметические: +, -, *, /, %, **. Сравнения: ===, !==, >, <, >=, <=. Логические: &&, ||, !. Специальные: ?? (нулевое слияние), ?. (опциональная цепочка), ... (spread). Тернарный: condition ? a : b." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Арифметические операции", "description": "Базовые: +, -, *, /, % (остаток), ** (степень). Инкремент/декремент: ++, -- (префикс и постфикс).", "code": { "language": "javascript", "code": "let sum = 5 + 3;         // 8\nlet diff = 5 - 3;        // 2\nlet prod = 5 * 3;        // 15\nlet quot = 6 / 2;        // 3\nlet rem = 5 % 2;         // 1\nlet power = 2 ** 3;      // 8\n\nlet x = 5;\nlet a = x++;  // a=5, x=6 (постфикс)\nlet b = ++x;  // b=7, x=7 (префикс)" } },
+          { "title": "2. Операции сравнения", "description": "=== строгое равенство (тип и значение). == нестрогое (с приведением). !== строгое неравенство.", "code": { "language": "javascript", "code": "5 === '5';  // false\n5 == '5';   // true (приведение)\n5 !== '5';  // true\n5 != '5';   // false\n5 > 3;      // true\n5 >= 5;     // true" } },
+          { "title": "3. Логические операции", "description": "&& (И), || (ИЛИ), ! (НЕ). Используются для условий и значений по умолчанию.", "code": { "language": "javascript", "code": "true && true;    // true\ntrue && false;   // false\ntrue || false;   // true\n!true;           // false\n\nconst age = 25;\nconst hasLicense = true;\nif (age >= 18 && hasLicense) {\n  console.log('Можно водить');\n}\n\nconst name = '';\nconst defaultName = name || 'Гость';" } },
+          { "title": "4. Оператор нулевого слияния (??)", "description": "Возвращает правый операнд, если левый null или undefined (не 0 или '').", "code": { "language": "javascript", "code": "const val1 = null ?? 'default';   // 'default'\nconst val2 = 0 ?? 'default';      // 0\nconst val3 = '' ?? 'default';     // ''\n\n// vs ||\nconst val4 = 0 || 'default';      // 'default'" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Приведение типов", "code": "'5' + 3;      // '53' (конкатенация)\n'5' - 3;      // 2 (преобразование в числа)\n'5' * '2';    // 10\n\n// Falsy значения: false, 0, '', null, undefined, NaN\n// Truthy: все остальные\n\n// Тернарный оператор\nconst age = 20;\nconst status = age >= 18 ? 'взрослый' : 'несовершеннолетний';\nconsole.log(status); // 'взрослый'" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// 1. Арифметические операции\nconst a = 10;\nconst b = 3;\nconsole.log('Сложение:', a + b);\nconsole.log('Остаток:', a % b);\nconsole.log('Степень:', a ** b);\n\n// 2. Сравнения\nconsole.log('10 === \"10\":', 10 === '10');\nconsole.log('10 == \"10\":', 10 == '10');\n\n// 3. Логические операции\nconst x = 5;\nconst y = 10;\nconsole.log('x > 3 && y < 20:', x > 3 && y < 20);\n\n// 4. Тернарный оператор\nconst age = 17;\nconst result = age >= 18 ? 'Доступ разрешён' : 'Доступ запрещён';\nconsole.log(result);\n\n// Попробуйте изменить значения и операторы\n",
+        "instructions": "Выполните арифметические операции (+, -, *, /, %, **), сравнения (===, !==, >, <), логические операции (&&, ||, !) и тернарный оператор. Измените значения переменных и наблюдайте за результатами."
+      }
+    ]
+  },
+  {
+    "id": "js-functions",
+    "slug": "functions",
+    "title": "Функции в JavaScript",
+    "description": "Объявление, стрелочные функции, замыкания и параметры",
+    "order": 3,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Функции в JavaScript" },
+      { "type": "text", "content": "Функции являются основными строительными блоками программы на JavaScript. Они позволяют инкапсулировать логику и повторно использовать код. В JavaScript функции можно объявлять несколькими способами." },
+      { "type": "callout", "variant": "info", "title": "⚙️ Способы объявления", "content": "Function Declaration — поднимается (hoisting). Function Expression — присваивается переменной. Стрелочные функции (ES6) — краткий синтаксис, нет своего this. Все функции — объекты первого класса: можно передавать как аргументы и возвращать из других функций." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Function Declaration", "description": "Объявляется с ключевым словом function. Поддерживает hoisting — можно вызвать до объявления.", "code": { "language": "javascript", "code": "function greet(name) {\n  return `Привет, ${name}!`;\n}\n\nconst result = greet('Мир'); // 'Привет, Мир!'\n\nsayHello(); // Работает (hoisting)\nfunction sayHello() {\n  console.log('Привет!');\n}" } },
+          { "title": "2. Function Expression", "description": "Функция присваивается переменной. Нельзя вызвать до объявления.", "code": { "language": "javascript", "code": "const multiply = function(a, b) {\n  return a * b;\n};\n\nconst result = multiply(5, 3); // 15" } },
+          { "title": "3. Стрелочные функции", "description": "Краткий синтаксис. Нет своего this. Нет объекта arguments. Нельзя использовать как конструктор.", "code": { "language": "javascript", "code": "const add = (a, b) => a + b;\nconst square = x => x * x;\nconst greet = name => `Привет, ${name}!`;\nconst sayHello = () => console.log('Привет!');" } },
+          { "title": "4. Параметры по умолчанию и замыкания", "description": "Параметры по умолчанию задаются в сигнатуре. Замыкания позволяют функциям запоминать внешние переменные.", "code": { "language": "javascript", "code": "function createUser(name, age = 18) {\n  return { name, age };\n}\n\nfunction createCounter() {\n  let count = 0;\n  return {\n    increment: () => ++count,\n    getCount: () => count\n  };\n}\nconst counter = createCounter();\ncounter.increment(); // 1" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Пример замыкания", "code": "function createCounter() {\n  let count = 0;\n\n  return {\n    increment() {\n      count++;\n      return count;\n    },\n    decrement() {\n      count--;\n      return count;\n    },\n    getCount() {\n      return count;\n    }\n  };\n}\n\nconst counter = createCounter();\nconsole.log(counter.increment()); // 1\nconsole.log(counter.increment()); // 2\nconsole.log(counter.decrement()); // 1\nconsole.log(counter.count);       // undefined\nconsole.log(counter.getCount());  // 1" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// 1. Function Declaration\nfunction greet(name) {\n  return `Привет, ${name}!`;\n}\nconsole.log(greet('Мир'));\n\n// 2. Стрелочная функция\nconst add = (a, b) => a + b;\nconsole.log('Сумма:', add(5, 3));\n\n// 3. Функция с параметрами по умолчанию\nfunction createUser(name, role = 'user') {\n  return { name, role };\n}\nconsole.log(createUser('Иван'));\nconsole.log(createUser('Анна', 'admin'));\n\n// 4. Попробуйте создать замыкание\n\n",
+        "instructions": "Создайте Function Declaration, стрелочную функцию, функцию с параметрами по умолчанию и замыкание. Попробуйте использовать функции высшего порядка (map, filter, reduce)."
+      }
+    ]
+  },
+  {
+    "id": "js-arrays",
+    "slug": "arrays",
+    "title": "Массивы в JavaScript",
+    "description": "Создание, методы массивов, итерация и преобразования",
+    "order": 4,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Массивы в JavaScript" },
+      { "type": "text", "content": "Массивы — это упорядоченные коллекции данных. В JavaScript массивы могут содержать элементы любого типа, включая другие массивы и объекты. Массивы предоставляют множество встроенных методов для манипуляции данными." },
+      { "type": "callout", "variant": "info", "title": "🔑 Ключевые методы массивов", "content": "Мутабельные: push/pop, shift/unshift, splice, sort, reverse. Немутабельные: map, filter, reduce, find, some, every, slice, concat, flat. Итерация: forEach, for...of, for." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Создание и базовые операции", "description": "Литерал [], Array.from(), Array.of(). Доступ по индексу. length — длина массива.", "code": { "language": "javascript", "code": "const fruits = ['Яблоко', 'Апельсин', 'Груша'];\nfruits.push('Банан');\nfruits.pop();\nfruits.unshift('Киви');\nfruits.shift();\nconsole.log(fruits[0]); // 'Киви' -> 'Яблоко'\nconsole.log(fruits.length); // 3" } },
+          { "title": "2. map, filter, reduce", "description": "map — преобразование каждого элемента. filter — фильтрация по условию. reduce — агрегация в одно значение.", "code": { "language": "javascript", "code": "const nums = [1, 2, 3, 4, 5];\n\nconst doubled = nums.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\nconst evens = nums.filter(n => n % 2 === 0);\n// [2, 4]\n\nconst sum = nums.reduce((acc, n) => acc + n, 0);\n// 15" } },
+          { "title": "3. find, findIndex, some, every", "description": "find — первый подходящий элемент. findIndex — его индекс. some — хотя бы один подходит. every — все подходят.", "code": { "language": "javascript", "code": "const users = [\n  { name: 'Иван', age: 25 },\n  { name: 'Анна', age: 30 },\n  { name: 'Пётр', age: 20 }\n];\n\nusers.find(u => u.name === 'Анна');\n// { name: 'Анна', age: 30 }\n\nusers.some(u => u.age < 21); // true\nusers.every(u => u.age > 18); // true" } },
+          { "title": "4. sort, slice, splice, spread", "description": "sort — сортировка. slice — копирование части. splice — удаление/вставка. Spread (...) — создание копии.", "code": { "language": "javascript", "code": "const arr = [3, 1, 4, 1, 5];\narr.sort((a, b) => a - b); // [1, 1, 3, 4, 5]\n\nconst copy = [...arr];\nconst merged = [...arr, 9, 2];" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Практический пример с массивами", "code": "const products = [\n  { name: 'Ноутбук', price: 50000, category: 'Электроника' },\n  { name: 'Книга', price: 500, category: 'Книги' },\n  { name: 'Телефон', price: 30000, category: 'Электроника' },\n  { name: 'Ручка', price: 50, category: 'Канцелярия' },\n  { name: 'Планшет', price: 25000, category: 'Электроника' }\n];\n\nconst electronics = products\n  .filter(p => p.category === 'Электроника')\n  .sort((a, b) => a.price - b.price);\n\nconst total = products.reduce((sum, p) => sum + p.price, 0);\n\nconst names = products.map(p => p.name);\n\nconsole.log('Электроника:', electronics);\nconsole.log('Общая стоимость:', total);\nconsole.log('Названия:', names);" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// Создайте массив чисел\nconst numbers = [5, 12, 8, 130, 44, 3, 27];\n\n// 1. Отфильтруйте числа больше 10\nconst bigNumbers = numbers.filter(n => n > 10);\nconsole.log('Больше 10:', bigNumbers);\n\n// 2. Умножьте каждое число на 2\nconst doubled = numbers.map(n => n * 2);\nconsole.log('Удвоенные:', doubled);\n\n// 3. Найдите сумму всех чисел\nconst sum = numbers.reduce((acc, n) => acc + n, 0);\nconsole.log('Сумма:', sum);\n\n// 4. Отсортируйте по возрастанию\nconst sorted = [...numbers].sort((a, b) => a - b);\nconsole.log('Отсортированные:', sorted);\n\n// Попробуйте найти максимальный элемент\n",
+        "instructions": "Работайте с массивом numbers: отфильтруйте числа > 10 (filter), удвойте каждое (map), найдите сумму (reduce), отсортируйте. Найдите максимальный элемент. Попробуйте chained вызовы: .filter().map().reduce()."
+      }
+    ]
+  },
+  {
+    "id": "js-objects",
+    "slug": "objects",
+    "title": "Объекты в JavaScript",
+    "description": "Создание, свойства, методы, деструктуризация",
+    "order": 5,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Объекты в JavaScript" },
+      { "type": "text", "content": "Объекты — это коллекции свойств (пар ключ-значение). Они используются для хранения сложных структур данных. Почти всё в JavaScript является объектом или наследует от Object." },
+      { "type": "callout", "variant": "info", "title": "🔑 Способы работы с объектами", "content": "Доступ: obj.key или obj['key']. Добавление: obj.newKey = value. Удаление: delete obj.key. Проверка: 'key' in obj. Ключи: Object.keys(), Object.values(), Object.entries(). Копирование: Object.assign(), spread {...obj}." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Создание и доступ", "description": "Литерал объекта {}, new Object(), Object.create(). Доступ через точку и квадратные скобки.", "code": { "language": "javascript", "code": "const user = {\n  name: 'Иван',\n  age: 30,\n  address: {\n    city: 'Москва',\n    street: 'Ленина'\n  }\n};\n\nconsole.log(user.name);        // 'Иван'\nconsole.log(user['age']);      // 30\nconsole.log(user.address.city); // 'Москва'" } },
+          { "title": "2. Методы объектов", "description": "Функции внутри объектов — методы. this ссылается на текущий объект. Краткий синтаксис методов.", "code": { "language": "javascript", "code": "const user = {\n  name: 'Иван',\n  greet() {\n    return `Привет, я ${this.name}!`;\n  },\n  setAge(newAge) {\n    this.age = newAge;\n  }\n};\n\nuser.greet(); // 'Привет, я Иван!'" } },
+          { "title": "3. Деструктуризация и spread", "description": "Извлечение свойств в переменные. Spread для копирования и объединения. Rest для сбора свойств.", "code": { "language": "javascript", "code": "const { name, age } = user;\nconst { name: userName, ...rest } = user;\n\nconst updated = { ...user, age: 31 };\nconst merged = { ...obj1, ...obj2 };" } },
+          { "title": "4. Object.keys, values, entries", "description": "keys() — массив ключей. values() — массив значений. entries() — массив пар [ключ, значение].", "code": { "language": "javascript", "code": "const user = { name: 'Иван', age: 30 };\n\nObject.keys(user);    // ['name', 'age']\nObject.values(user);  // ['Иван', 30]\nObject.entries(user); // [['name','Иван'], ['age',30]]\n\nfor (const [key, value] of Object.entries(user)) {\n  console.log(`${key}: ${value}`);\n}" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Работа с объектами", "code": "const products = [\n  { id: 1, name: 'Ноутбук', price: 50000, inStock: true },\n  { id: 2, name: 'Книга', price: 500, inStock: false },\n  { id: 3, name: 'Телефон', price: 30000, inStock: true }\n];\n\nconst priceMap = {};\nproducts.forEach(p => {\n  priceMap[p.name] = p.price;\n});\n\nconsole.log(priceMap);\n// { 'Ноутбук': 50000, 'Книга': 500, 'Телефон': 30000 }\n\nconst updated = products.map(p => ({\n  ...p,\n  priceWithDiscount: Math.round(p.price * 0.9)\n}));\n\nconsole.log(updated);" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// Создайте объект пользователя\nconst user = {\n  name: 'Иван',\n  age: 25,\n  hobbies: ['Программирование', 'Музыка', 'Спорт'],\n  address: {\n    city: 'Москва',\n    country: 'Россия'\n  }\n};\n\n// 1. Выведите имя и возраст\nconsole.log(user.name, user.age);\n\n// 2. Выведите город\nconsole.log(user.address.city);\n\n// 3. Деструктурируйте объект\nconst { name, hobbies, address: { city } } = user;\nconsole.log(name, city);\n\n// 4. Создайте обновлённую копию (spread)\nconst updatedUser = { ...user, age: 26 };\nconsole.log(updatedUser);\n\n// 5. Добавьте метод greet\n",
+        "instructions": "Работайте с объектом user: получите свойства через точку и [], примените деструктуризацию, создайте обновлённую копию через spread, добавьте метод greet. Используйте Object.keys/values/entries для итерации."
+      }
+    ]
+  },
+  {
+    "id": "js-strings",
+    "slug": "strings",
+    "title": "Строки в JavaScript",
+    "description": "Создание, методы строк, шаблонные литералы",
+    "order": 6,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Строки в JavaScript" },
+      { "type": "text", "content": "Строки — неизменяемые последовательности символов. JavaScript предоставляет богатый набор методов для работы со строками: поиск, извлечение подстрок, преобразование регистра, замена и разбиение." },
+      { "type": "callout", "variant": "tip", "title": "💡 Шаблонные литералы", "content": "Обратные кавычки (`...`) позволяют встраивать выражения: `Привет, ${name}!`. Поддерживают многострочность. Можно использовать тегированные шаблоны для кастомной обработки." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Создание и базовые операции", "description": "Одинарные, двойные кавычки и шаблонные литералы. Конкатенация через +. Длина через .length.", "code": { "language": "javascript", "code": "const str1 = 'Привет';\nconst str2 = \"Мир\";\nconst template = `${str1}, ${str2}!`;\n\nconsole.log(template.length);    // 12\nconsole.log(template[0]);         // 'П'\nconsole.log(template.toUpperCase()); // 'ПРИВЕТ, МИР!'" } },
+          { "title": "2. Поиск и извлечение", "description": "indexOf, includes, startsWith, endsWith — поиск. slice, substring — извлечение подстроки.", "code": { "language": "javascript", "code": "const str = 'Привет, мир!';\n\nstr.indexOf('мир');       // 8\nstr.includes('Привет');   // true\nstr.startsWith('Привет'); // true\nstr.endsWith('!');        // true\nstr.slice(0, 6);          // 'Привет'\nstr.substring(8, 11);     // 'мир'" } },
+          { "title": "3. Замена и разбиение", "description": "replace/replaceAll — замена. split — разбиение в массив. trim — удаление пробелов. repeat — повторение.", "code": { "language": "javascript", "code": "const str = '  Привет, мир!  ';\n\nstr.trim();                        // 'Привет, мир!'\nstr.replace('мир', 'JavaScript');   // '  Привет, JavaScript!  '\nstr.replaceAll('и', 'И');           // замена всех\n\n'яблоко, банан, груша'.split(', '); // ['яблоко', 'банан', 'груша']\n'Ха'.repeat(3);                     // 'ХаХаХа'" } },
+          { "title": "4. Преобразование типов", "description": "String(), toString(), Number(), parseInt(), parseFloat(). Преобразование между строками и числами.", "code": { "language": "javascript", "code": "String(42);            // '42'\n(42).toString();        // '42'\nNumber('42');           // 42\nparseInt('42px');        // 42\nparseFloat('3.14abc');   // 3.14\n+'42';                   // 42\n'42' * 1;                // 42" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Полезные строковые операции", "code": "function capitalize(str) {\n  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();\n}\n\nfunction truncate(str, maxLength) {\n  if (str.length <= maxLength) return str;\n  return str.slice(0, maxLength) + '...';\n}\n\nfunction slugify(str) {\n  return str\n    .toLowerCase()\n    .trim()\n    .replace(/\\s+/g, '-')\n    .replace(/[^\\wа-яё-]/gi, '');\n}\n\nconsole.log(capitalize('пРИВЕТ'));     // 'Привет'\nconsole.log(truncate('Длинный текст', 10)); // 'Длинный т...'\nconsole.log(slugify('  Привет Мир!  '));     // 'привет-мир'" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// Работа со строками\nconst text = '  JavaScript — это интересно!  ';\n\n// 1. Удалите пробелы по краям\nconst trimmed = text.trim();\nconsole.log(trimmed);\n\n// 2. Проверьте, содержит ли строка слово \"JavaScript\"\nconsole.log(trimmed.includes('JavaScript'));\n\n// 3. Замените \"интересно\" на \"замечательно\"\nconst replaced = trimmed.replace('интересно', 'замечательно');\nconsole.log(replaced);\n\n// 4. Разбейте строку на слова\nconst words = trimmed.split(' ');\nconsole.log(words);\n\n// 5. Создайте строку из массива\nconst joined = words.join('-');\nconsole.log(joined);\n\n// Попробуйте написать функцию capitalize\n",
+        "instructions": "Работайте со строкой: trim(), includes(), replace(), split(), join(). Напишите функцию capitalize(str), которая делает первую букву заглавной, а остальные — строчными."
+      }
+    ]
+  },
+  {
+    "id": "js-conditions",
+    "slug": "conditions",
+    "title": "Условия и циклы",
+    "description": "if/else, switch, for, while, for...of, for...in",
+    "order": 7,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "Условия и циклы в JavaScript" },
+      { "type": "text", "content": "Условные операторы позволяют выполнять разный код в зависимости от условий. Циклы позволяют повторять блок кода многократно. Вместе они составляют основу управляющих конструкций языка." },
+      { "type": "callout", "variant": "info", "title": "🔑 Конструкции", "content": "Условия: if/else if/else, switch/case, тернарный оператор (?:). Циклы: for, while, do...while, for...of (массивы), for...in (объекты). Управление: break — выход из цикла, continue — пропуск итерации." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. if / else if / else", "description": "Базовая условная конструкция. Условие приводится к boolean. Можно вкладывать условия.", "code": { "language": "javascript", "code": "const age = 20;\n\nif (age < 13) {\n  console.log('Ребёнок');\n} else if (age < 18) {\n  console.log('Подросток');\n} else {\n  console.log('Взрослый');\n}" } },
+          { "title": "2. switch и тернарный оператор", "description": "switch — выбор из нескольких вариантов. Тернарный оператор — краткая запись if/else.", "code": { "language": "javascript", "code": "const day = 'понедельник';\nswitch (day) {\n  case 'понедельник':\n  case 'вторник':\n    console.log('Будний день');\n    break;\n  case 'суббота':\n  case 'воскресенье':\n    console.log('Выходной');\n    break;\n  default:\n    console.log('Неизвестный день');\n}\n\nconst status = age >= 18 ? 'взрослый' : 'несовершеннолетний';" } },
+          { "title": "3. Циклы for, while, do...while", "description": "for — классический цикл с счётчиком. while — с предусловием. do...while — с постусловием.", "code": { "language": "javascript", "code": "for (let i = 0; i < 5; i++) {\n  console.log(i); // 0, 1, 2, 3, 4\n}\n\nlet i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}\n\ndo {\n  console.log(i);\n  i++;\n} while (i < 5);" } },
+          { "title": "4. for...of и for...in", "description": "for...of — итерация по значениям (массивы, строки). for...in — итерация по ключам (объекты). break и continue для управления.", "code": { "language": "javascript", "code": "const fruits = ['Яблоко', 'Апельсин'];\nfor (const fruit of fruits) {\n  console.log(fruit);\n}\n\nconst user = { name: 'Иван', age: 30 };\nfor (const key in user) {\n  console.log(`${key}: ${user[key]}`);\n}\n\nfor (const n of [1, 2, 3, 4, 5]) {\n  if (n === 3) continue; // пропустить\n  if (n === 5) break;    // выйти\n  console.log(n); // 1, 2, 4\n}" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Практический пример", "code": "const students = [\n  { name: 'Иван', grade: 5 },\n  { name: 'Анна', grade: 4 },\n  { name: 'Пётр', grade: 3 },\n  { name: 'Мария', grade: 5 },\n  { name: 'Алексей', grade: 2 }\n];\n\nlet sum = 0;\nlet excellent = 0;\n\nfor (const student of students) {\n  sum += student.grade;\n\n  if (student.grade === 5) {\n    excellent++;\n    console.log(`${student.name} — отличник!`);\n  } else if (student.grade >= 4) {\n    console.log(`${student.name} — хорошист`);\n  } else if (student.grade === 3) {\n    console.log(`${student.name} — троечник`);\n  } else {\n    console.log(`${student.name} — нужно подтянуться`);\n  }\n}\n\nconst average = sum / students.length;\nconsole.log(`Средний балл: ${average.toFixed(2)}`);\nconsole.log(`Отличников: ${excellent}`);" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// 1. Используйте if/else для определения чётности\nconst num = 7;\nif (num % 2 === 0) {\n  console.log(`${num} — чётное`);\n} else {\n  console.log(`${num} — нечётное`);\n}\n\n// 2. Цикл for для вывода чисел от 1 до 10\nfor (let i = 1; i <= 10; i++) {\n  console.log(i);\n}\n\n// 3. for...of для обхода массива\nconst colors = ['красный', 'зелёный', 'синий'];\nfor (const color of colors) {\n  console.log(color);\n}\n\n// 4. Напишите FizzBuzz (1-20)\n// Число кратно 3 -> \"Fizz\"\n// Число кратно 5 -> \"Buzz\"\n// Кратно обоим -> \"FizzBuzz\"\n\n",
+        "instructions": "Используйте if/else для проверки чётности числа. Напишите цикл for от 1 до 10. Обойдите массив через for...of. Напишите FizzBuzz: числа от 1 до 20, кратные 3 — 'Fizz', кратные 5 — 'Buzz', кратные обоим — 'FizzBuzz'."
+      }
+    ]
+  },
+  {
+    "id": "js-dom",
+    "slug": "dom",
+    "title": "DOM и события",
+    "description": "Поиск элементов, манипуляция DOM, обработка событий",
+    "order": 8,
+    "blocks": [
+      { "type": "heading", "level": 2, "content": "DOM и события в JavaScript" },
+      { "type": "text", "content": "Document Object Model (DOM) — это программный интерфейс для HTML-документов, представляющий страницу в виде дерева объектов. JavaScript позволяет находить элементы, изменять их содержимое, стили и атрибуты, а также обрабатывать пользовательские события." },
+      { "type": "callout", "variant": "info", "title": "🔑 Основные операции", "content": "Поиск: getElementById, querySelector, querySelectorAll. Изменение: textContent, innerHTML, classList, style. Создание: createElement, appendChild. События: addEventListener, removeEventListener. Делегирование событий." },
+      {
+        "type": "list", "ordered": false,
+        "items": [
+          { "title": "1. Поиск элементов", "description": "getElementById — по ID. querySelector — первый по CSS-селектору. querySelectorAll — все по селектору.", "code": { "language": "javascript", "code": "const el = document.getElementById('header');\nconst btn = document.querySelector('.btn-primary');\nconst items = document.querySelectorAll('.list-item');\n\nitems.forEach(item => {\n  console.log(item.textContent);\n});" } },
+          { "title": "2. Изменение элементов", "description": "textContent — текст. innerHTML — HTML. classList — управление классами. style — inline стили. setAttribute — атрибуты.", "code": { "language": "javascript", "code": "const el = document.querySelector('.message');\n\nel.textContent = 'Новый текст';\nel.innerHTML = '<strong>Жирный текст</strong>';\nel.classList.add('active');\nel.classList.remove('hidden');\nel.classList.toggle('open');\nel.style.color = 'red';\nel.setAttribute('data-status', 'loaded');" } },
+          { "title": "3. Создание и удаление", "description": "createElement — создание элемента. append/prepend — добавление. remove — удаление. insertAdjacentHTML — вставка HTML.", "code": { "language": "javascript", "code": "const div = document.createElement('div');\ndiv.textContent = 'Новый элемент';\ndiv.classList.add('card');\n\ndocument.body.append(div);\n\n// Вставка HTML\ndocument.querySelector('.container')\n  .insertAdjacentHTML('beforeend', '<p>Текст</p>');\n\n// Удаление\ndiv.remove();" } },
+          { "title": "4. Обработка событий", "description": "addEventListener — подписка. removeEventListener — отписка. event объект с данными о событии. Делегирование через event.target.", "code": { "language": "javascript", "code": "const btn = document.querySelector('.btn');\n\nbtn.addEventListener('click', (event) => {\n  console.log('Клик!', event.target);\n});\n\n// Делегирование событий\ndocument.querySelector('.list').addEventListener('click', (e) => {\n  if (e.target.matches('.item')) {\n    console.log('Элемент:', e.target.textContent);\n  }\n});" } }
+        ]
+      },
+      { "type": "code", "language": "javascript", "label": "Интерактивный список задач", "code": "const input = document.querySelector('#taskInput');\nconst addBtn = document.querySelector('#addBtn');\nconst list = document.querySelector('#taskList');\n\nfunction addTask(text) {\n  const li = document.createElement('li');\n  li.className = 'task-item';\n\n  const span = document.createElement('span');\n  span.textContent = text;\n\n  const deleteBtn = document.createElement('button');\n  deleteBtn.textContent = 'Удалить';\n  deleteBtn.addEventListener('click', () => li.remove());\n\n  span.addEventListener('click', () => {\n    span.classList.toggle('completed');\n  });\n\n  li.append(span, deleteBtn);\n  list.append(li);\n}\n\naddBtn.addEventListener('click', () => {\n  const text = input.value.trim();\n  if (text) {\n    addTask(text);\n    input.value = '';\n  }\n});\n\ninput.addEventListener('keydown', (e) => {\n  if (e.key === 'Enter') {\n    addBtn.click();\n  }\n});" },
+      {
+        "type": "editor",
+        "language": "javascript",
+        "initialCode": "// Работа с DOM\n// (в редакторе document уже доступен)\n\n// 1. Найдите элемент\nconst title = document.querySelector('h1');\nif (title) {\n  title.textContent = 'Привет из JavaScript!';\n  title.style.color = '#3498db';\n}\n\n// 2. Создайте элемент\nconst p = document.createElement('p');\np.textContent = 'Этот абзац создан через JavaScript';\np.style.padding = '10px';\np.style.background = '#ecf0f1';\np.style.borderRadius = '4px';\ndocument.body.append(p);\n\n// 3. Обработайте событие\nconst btn = document.querySelector('button');\nif (btn) {\n  btn.addEventListener('click', () => {\n    p.textContent = 'Кнопка нажата!';\n    p.style.background = '#3498db';\n    p.style.color = 'white';\n  });\n}\n\nconsole.log('DOM загружен и готов!');\n",
+        "instructions": "Найдите элемент h1 и измените его текст и цвет. Создайте новый элемент p и добавьте его на страницу. Добавьте обработчик click на кнопку, который меняет текст и стиль абзаца. Попробуйте создать список элементов."
+      }
+    ]
+  }
+]

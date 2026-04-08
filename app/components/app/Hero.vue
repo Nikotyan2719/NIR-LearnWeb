@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const mode = useColorMode();
 const isHovered = ref(false);
 </script>
 
