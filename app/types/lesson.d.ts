@@ -57,6 +57,12 @@ export type ListBlock = {
 
 export type LessonBlock = TextBlock | HeadingBlock | CalloutBlock | CodeBlock | EditorBlock | ListBlock;
 
+export type DocsLink = {
+  title: string
+  url: string
+  description?: string
+};
+
 export type Lesson = {
   id: string
   slug: string
@@ -64,6 +70,7 @@ export type Lesson = {
   description: string
   order: number
   blocks: LessonBlock[]
+  docsLinks?: DocsLink[]
 };
 
 export type CourseConfig = {

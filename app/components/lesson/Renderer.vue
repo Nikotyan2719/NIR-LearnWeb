@@ -24,6 +24,8 @@
       <LessonBlockList v-else-if="block.type === 'list'" :block="block" />
     </div>
 
+    <LessonDocsLinks v-if="lesson.docsLinks" :links="lesson.docsLinks" />
+
     <AppComment />
 
     <div ref="bottomSentinel" class="h-px" />

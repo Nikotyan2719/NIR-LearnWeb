@@ -20,6 +20,11 @@
       },
       { "type": "code", "language": "css", "label": "Адаптивное меню с селекторами", "code": ".nav {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 1rem;\n}\n\n.nav__list {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  gap: 1rem;\n}\n\n.nav__link {\n  color: white;\n  text-decoration: none;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  transition: all 0.3s ease;\n}\n\n.nav__link:hover,\n.nav__link:focus {\n  background: rgba(255, 255, 255, 0.2);\n  transform: translateY(-2px);\n}\n\n.nav__link.active {\n  background: white;\n  color: #667eea;\n}\n\n@media (max-width: 768px) {\n  .nav__list {\n    flex-direction: column;\n    gap: 0.5rem;\n  }\n}" },
       { "type": "callout", "variant": "tip", "title": "🏆 Лучшие практики", "content": "Используйте классы вместо ID для стилизации. Избегайте излишней вложенности (.nav-link лучше, чем .nav ul li a). Начинайте с менее специфичных селекторов. Используйте семантические имена классов (.btn-primary вместо .red-button)." }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Селекторы CSS", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors", "description": "Все типы селекторов" },
+      { "title": "MDN: Специфичность", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/Specificity", "description": "Как CSS определяет приоритет" },
+      { "title": "CSS Diner", "url": "https://flukeout.github.io/", "description": "Интерактивная игра для изучения селекторов" }
     ]
   },
   {
@@ -42,6 +47,11 @@
         ]
       },
       { "type": "code", "language": "css", "label": "Модальное окно с позиционированием", "code": ".overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1000;\n}\n\n.modal {\n  position: relative;\n  background: white;\n  padding: 2rem;\n  border-radius: 8px;\n  max-width: 500px;\n  width: 90%;\n  max-height: 90vh;\n  overflow-y: auto;\n}\n\n.close-btn {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  background: none;\n  border: none;\n  font-size: 1.5rem;\n  cursor: pointer;\n}" }
+    ],
+    "docsLinks": [
+      { "title": "MDN: position", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/position", "description": "Свойство position и его значения" },
+      { "title": "MDN: z-index", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/z-index", "description": "Управление слоями" },
+      { "title": "web.dev: Learn CSS Positioning", "url": "https://web.dev/learn/css/layout/", "description": "Макеты и позиционирование" }
     ]
   },
   {
@@ -63,6 +73,11 @@
         ]
       },
       { "type": "code", "language": "css", "label": "Гибкая навигация и карточки", "code": ".nav {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  background: #333;\n  color: white;\n}\n\n.nav-links {\n  display: flex;\n  gap: 1rem;\n  list-style: none;\n}\n\n.nav-links a {\n  color: white;\n  text-decoration: none;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  transition: background-color 0.3s;\n}\n\n.nav-links a:hover {\n  background-color: #555;\n}\n\n.card-container {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1.5rem;\n}\n\n.card {\n  flex: 1 1 300px;\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #ddd;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.card-content {\n  padding: 1.5rem;\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n}\n\n.card p {\n  flex-grow: 1;\n}" }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Flexbox", "url": "https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox", "description": "Руководство по Flexbox" },
+      { "title": "CSS-Tricks: Полный гайд по Flexbox", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/", "description": "Наглядный справочник Flexbox" },
+      { "title": "Flexbox Froggy", "url": "https://flexboxfroggy.com/", "description": "Игра для изучения Flexbox" }
     ]
   },
   {
@@ -92,6 +107,11 @@
         "initialCode": "/* Установите border-box для всех элементов */\n\n/* .box1: ширина 200px, padding 20px, border 3px solid blue */\n.box1 {\n\n}\n\n/* .box2: ширина 300px, margin 0 auto (центрирование), padding 15px, border-radius 10px */\n.box2 {\n\n}\n\n/* .box3: margin-top 30px, padding 10px 20px, border-bottom 2px dashed gray */\n.box3 {\n\n}",
         "instructions": "Стилизуйте три блока, используя свойства блочной модели: width, padding, border, margin, border-radius. Установите box-sizing: border-box глобально."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Блочная модель", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model", "description": "Введение в блочную модель" },
+      { "title": "MDN: box-sizing", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/box-sizing", "description": "Как считается размер элемента" },
+      { "title": "web.dev: Box Model", "url": "https://web.dev/learn/css/box-model", "description": "Понятное объяснение от Google" }
     ]
   },
   {
@@ -121,6 +141,11 @@
         "initialCode": "/* Создайте grid с 3 колонками равной ширины */\n.grid {\n\n}\n\n/* Базовые стили для элементов */\n.item {\n  padding: 20px;\n  background: #3498db;\n  color: white;\n  text-align: center;\n  border-radius: 4px;\n}\n\n/* .item1 занимает всю первую строку */\n.item1 {\n\n}\n\n/* .item5 занимает 2 колонки */\n.item5 {\n\n}",
         "instructions": "Создайте CSS Grid с 3 равными колонками (1fr), gap 10px. .item1 должен занимать всю первую строку (grid-column: 1 / -1). .item5 должен занимать 2 колонки. Стилизуйте элементы фоном и padding."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: CSS Grid", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/CSS_grid_layout", "description": "Полное руководство по Grid" },
+      { "title": "CSS-Tricks: Полный гайд по Grid", "url": "https://css-tricks.com/snippets/css/complete-guide-grid/", "description": "Наглядный справочник Grid" },
+      { "title": "Grid Garden", "url": "https://cssgridgarden.com/", "description": "Игра для изучения Grid" }
     ]
   },
   {
@@ -150,6 +175,11 @@
         "initialCode": "/* .box1: линейный градиент от #667eea к #764ba2, белый текст */\n.box1 {\n\n}\n\n/* .box2: радиальный градиент, белый текст */\n.box2 {\n\n}\n\n/* .box3: полупрозрачный чёрный фон (rgba), белый текст */\n.box3 {\n\n}\n\n/* Общие стили для блоков */\n.box {\n  padding: 40px;\n  margin: 10px;\n  border-radius: 8px;\n  text-align: center;\n  font-weight: bold;\n}",
         "instructions": "Стилизуйте 3 блока: .box1 с линейным градиентом (от #667eea к #764ba2) и белым текстом, .box2 с радиальным градиентом, .box3 с полупрозрачным фоном через rgba. Все блоки должны иметь padding, border-radius и белый текст."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Цвета CSS", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/color_value", "description": "Все форматы цвета в CSS" },
+      { "title": "MDN: gradients", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/gradient", "description": "Линейные и радиальные градиенты" },
+      { "title": "coolors.co", "url": "https://coolors.co/", "description": "Генератор цветовых палитр" }
     ]
   },
   {
@@ -179,6 +209,11 @@
         "initialCode": "/* Стилизуйте заголовки */\nh1 {\n\n}\n\nh2 {\n\n}\n\n/* .intro: увеличенный шрифт, жирность, нижняя граница */\n.intro {\n\n}\n\n/* .muted: серый цвет, увеличенный line-height */\n.muted {\n\n}\n\n/* .truncate: обрезка текста с многоточием */\n.truncate {\n\n}",
         "instructions": "Стилизуйте h1 (крупный, жирный), h2 (средний, с нижним border), .intro (увеличенный шрифт, font-weight 600, нижний border), .muted (серый цвет #718096, line-height 1.8), .truncate (обрезка текста с text-overflow: ellipsis)."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Текст и шрифты", "url": "https://developer.mozilla.org/ru/docs/Learn/CSS/Styling_text", "description": "Стилизация текста в CSS" },
+      { "title": "MDN: font-family", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/font-family", "description": "Выбор шрифтов" },
+      { "title": "Google Fonts", "url": "https://fonts.google.com/", "description": "Бесплатные веб-шрифты" }
     ]
   },
   {
@@ -208,6 +243,11 @@
         "initialCode": "/* Стилизуйте блок */\n.box {\n  width: 200px;\n  height: 80px;\n  background: #3498db;\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 20px;\n  border-radius: 8px;\n\n  /* Добавьте transition для transform и background */\n\n}\n\n/* При наведении: подъём вверх и изменение цвета */\n.hover-me:hover {\n\n}\n\n/* Создайте @keyframes pulse для .animated */\n@keyframes pulse {\n\n}\n\n.animated {\n\n}\n\n/* Создайте спиннер — вращающийся круг */\n.spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid #e2e8f0;\n  border-top-color: #3498db;\n  border-radius: 50%;\n  margin: 20px;\n\n  /* Добавьте анимацию вращения */\n\n}",
         "instructions": "Добавьте transition к .box для transform и background-color. При :hover блок поднимается вверх и меняет цвет. Создайте @keyframes pulse для пульсации .animated. Создайте вращающийся спиннер с помощью @keyframes и border."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: CSS Transitions", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/CSS_transitions/Using_CSS_transitions", "description": "Плавные переходы" },
+      { "title": "MDN: CSS Animations", "url": "https://developer.mozilla.org/ru/docs/Web/CSS/CSS_animations", "description": "Ключевые кадры и анимации" },
+      { "title": "web.dev: Animations", "url": "https://web.dev/learn/css/animations", "description": "Лучшие практики анимаций" }
     ]
   }
 ]

@@ -44,6 +44,13 @@
         ]
       },
       { "type": "code", "language": "javascript", "label": "Пример JavaScript", "code": "const button = document.querySelector('button');\n\nbutton.addEventListener('click', () => {\n  console.log('Кнопка нажата!');\n  document.body.style.backgroundColor = 'lightblue';\n});\n\nlet message = 'Привет';\nconst name = 'Пользователь';\n\nfunction greet() {\n  return `${message}, ${name}!`;\n}\n\nconsole.log(greet());" }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Начало работы с HTML", "url": "https://developer.mozilla.org/ru/docs/Learn/HTML/Introduction_to_HTML", "description": "Введение в HTML на русском" },
+      { "title": "MDN: Начало работы с CSS", "url": "https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics", "description": "Основы CSS для новичков" },
+      { "title": "MDN: Первые шаги в JavaScript", "url": "https://developer.mozilla.org/ru/docs/Learn/JavaScript/First_steps", "description": "Изучение JavaScript с нуля" },
+      { "title": "web.dev: Learn HTML", "url": "https://web.dev/learn/html", "description": "Интерактивный курс от Google" },
+      { "title": "javascript.info", "url": "https://javascript.info/", "description": "Современный учебник JavaScript" }
     ]
   }
 ]

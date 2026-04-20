@@ -25,6 +25,11 @@
         "initialCode": "// Создайте переменные разных типов\nconst num = 42;\nconst str = 'Привет';\nconst bool = true;\nconst nothing = null;\nlet notDefined;\nconst arr = [1, 2, 3];\nconst obj = { name: 'Иван', age: 25 };\n\n// Выведите типы в консоль\nconsole.log(typeof num);\nconsole.log(typeof str);\nconsole.log(typeof bool);\nconsole.log(typeof nothing);\nconsole.log(typeof notDefined);\nconsole.log(Array.isArray(arr));\n\n// Попробуйте изменить значение и проверить тип\n",
         "instructions": "Создайте переменные разных типов: number, string, boolean, null, undefined, array, object. Выведите их типы через typeof. Попробуйте изменить значение переменных и проверить, как меняется тип."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Типы данных", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures", "description": "Структуры данных JavaScript" },
+      { "title": "javascript.info: Типы", "url": "https://javascript.info/types", "description": "Подробно о типах данных" },
+      { "title": "MDN: typeof", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof", "description": "Оператор проверки типа" }
     ]
   },
   {
@@ -53,6 +58,11 @@
         "initialCode": "// 1. Арифметические операции\nconst a = 10;\nconst b = 3;\nconsole.log('Сложение:', a + b);\nconsole.log('Остаток:', a % b);\nconsole.log('Степень:', a ** b);\n\n// 2. Сравнения\nconsole.log('10 === \"10\":', 10 === '10');\nconsole.log('10 == \"10\":', 10 == '10');\n\n// 3. Логические операции\nconst x = 5;\nconst y = 10;\nconsole.log('x > 3 && y < 20:', x > 3 && y < 20);\n\n// 4. Тернарный оператор\nconst age = 17;\nconst result = age >= 18 ? 'Доступ разрешён' : 'Доступ запрещён';\nconsole.log(result);\n\n// Попробуйте изменить значения и операторы\n",
         "instructions": "Выполните арифметические операции (+, -, *, /, %, **), сравнения (===, !==, >, <), логические операции (&&, ||, !) и тернарный оператор. Измените значения переменных и наблюдайте за результатами."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Операторы", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators", "description": "Выражения и операторы" },
+      { "title": "javascript.info: Операторы", "url": "https://javascript.info/operators", "description": "Базовые операторы" },
+      { "title": "MDN: Приведение типов", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#number_coercion", "description": "Автоматическое преобразование типов" }
     ]
   },
   {
@@ -81,6 +91,11 @@
         "initialCode": "// 1. Function Declaration\nfunction greet(name) {\n  return `Привет, ${name}!`;\n}\nconsole.log(greet('Мир'));\n\n// 2. Стрелочная функция\nconst add = (a, b) => a + b;\nconsole.log('Сумма:', add(5, 3));\n\n// 3. Функция с параметрами по умолчанию\nfunction createUser(name, role = 'user') {\n  return { name, role };\n}\nconsole.log(createUser('Иван'));\nconsole.log(createUser('Анна', 'admin'));\n\n// 4. Попробуйте создать замыкание\n\n",
         "instructions": "Создайте Function Declaration, стрелочную функцию, функцию с параметрами по умолчанию и замыкание. Попробуйте использовать функции высшего порядка (map, filter, reduce)."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Функции", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions", "description": "Руководство по функциям" },
+      { "title": "javascript.info: Функции", "url": "https://javascript.info/function-basics", "description": "Основы функций" },
+      { "title": "MDN: Arrow Functions", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions", "description": "Стрелочные функции ES6+" }
     ]
   },
   {
@@ -109,6 +124,11 @@
         "initialCode": "// Создайте массив чисел\nconst numbers = [5, 12, 8, 130, 44, 3, 27];\n\n// 1. Отфильтруйте числа больше 10\nconst bigNumbers = numbers.filter(n => n > 10);\nconsole.log('Больше 10:', bigNumbers);\n\n// 2. Умножьте каждое число на 2\nconst doubled = numbers.map(n => n * 2);\nconsole.log('Удвоенные:', doubled);\n\n// 3. Найдите сумму всех чисел\nconst sum = numbers.reduce((acc, n) => acc + n, 0);\nconsole.log('Сумма:', sum);\n\n// 4. Отсортируйте по возрастанию\nconst sorted = [...numbers].sort((a, b) => a - b);\nconsole.log('Отсортированные:', sorted);\n\n// Попробуйте найти максимальный элемент\n",
         "instructions": "Работайте с массивом numbers: отфильтруйте числа > 10 (filter), удвойте каждое (map), найдите сумму (reduce), отсортируйте. Найдите максимальный элемент. Попробуйте chained вызовы: .filter().map().reduce()."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Array", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array", "description": "Справочник методов массивов" },
+      { "title": "javascript.info: Массивы", "url": "https://javascript.info/array", "description": "Подробно о массивах" },
+      { "title": "javascript.info: Методы массивов", "url": "https://javascript.info/array-methods", "description": "map, filter, reduce и другие" }
     ]
   },
   {
@@ -137,6 +157,11 @@
         "initialCode": "// Создайте объект пользователя\nconst user = {\n  name: 'Иван',\n  age: 25,\n  hobbies: ['Программирование', 'Музыка', 'Спорт'],\n  address: {\n    city: 'Москва',\n    country: 'Россия'\n  }\n};\n\n// 1. Выведите имя и возраст\nconsole.log(user.name, user.age);\n\n// 2. Выведите город\nconsole.log(user.address.city);\n\n// 3. Деструктурируйте объект\nconst { name, hobbies, address: { city } } = user;\nconsole.log(name, city);\n\n// 4. Создайте обновлённую копию (spread)\nconst updatedUser = { ...user, age: 26 };\nconsole.log(updatedUser);\n\n// 5. Добавьте метод greet\n",
         "instructions": "Работайте с объектом user: получите свойства через точку и [], примените деструктуризацию, создайте обновлённую копию через spread, добавьте метод greet. Используйте Object.keys/values/entries для итерации."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: Объекты", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_Objects", "description": "Работа с объектами" },
+      { "title": "javascript.info: Объекты", "url": "https://javascript.info/object", "description": "Основы объектов" },
+      { "title": "MDN: Деструктуризация", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment", "description": "Деструктурирующее присваивание" }
     ]
   },
   {
@@ -165,6 +190,11 @@
         "initialCode": "// Работа со строками\nconst text = '  JavaScript — это интересно!  ';\n\n// 1. Удалите пробелы по краям\nconst trimmed = text.trim();\nconsole.log(trimmed);\n\n// 2. Проверьте, содержит ли строка слово \"JavaScript\"\nconsole.log(trimmed.includes('JavaScript'));\n\n// 3. Замените \"интересно\" на \"замечательно\"\nconst replaced = trimmed.replace('интересно', 'замечательно');\nconsole.log(replaced);\n\n// 4. Разбейте строку на слова\nconst words = trimmed.split(' ');\nconsole.log(words);\n\n// 5. Создайте строку из массива\nconst joined = words.join('-');\nconsole.log(joined);\n\n// Попробуйте написать функцию capitalize\n",
         "instructions": "Работайте со строкой: trim(), includes(), replace(), split(), join(). Напишите функцию capitalize(str), которая делает первую букву заглавной, а остальные — строчными."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: String", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String", "description": "Справочник методов строк" },
+      { "title": "javascript.info: Строки", "url": "https://javascript.info/string", "description": "Подробно о строках" },
+      { "title": "MDN: Template literals", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals", "description": "Шаблонные строки" }
     ]
   },
   {
@@ -193,6 +223,11 @@
         "initialCode": "// 1. Используйте if/else для определения чётности\nconst num = 7;\nif (num % 2 === 0) {\n  console.log(`${num} — чётное`);\n} else {\n  console.log(`${num} — нечётное`);\n}\n\n// 2. Цикл for для вывода чисел от 1 до 10\nfor (let i = 1; i <= 10; i++) {\n  console.log(i);\n}\n\n// 3. for...of для обхода массива\nconst colors = ['красный', 'зелёный', 'синий'];\nfor (const color of colors) {\n  console.log(color);\n}\n\n// 4. Напишите FizzBuzz (1-20)\n// Число кратно 3 -> \"Fizz\"\n// Число кратно 5 -> \"Buzz\"\n// Кратно обоим -> \"FizzBuzz\"\n\n",
         "instructions": "Используйте if/else для проверки чётности числа. Напишите цикл for от 1 до 10. Обойдите массив через for...of. Напишите FizzBuzz: числа от 1 до 20, кратные 3 — 'Fizz', кратные 5 — 'Buzz', кратные обоим — 'FizzBuzz'."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: if...else", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else", "description": "Условные операторы" },
+      { "title": "MDN: for", "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for", "description": "Цикл for" },
+      { "title": "javascript.info: Циклы", "url": "https://javascript.info/while-for", "description": "Циклы while и for" }
     ]
   },
   {
@@ -221,6 +256,11 @@
         "initialCode": "// Работа с DOM\n// (в редакторе document уже доступен)\n\n// 1. Найдите элемент\nconst title = document.querySelector('h1');\nif (title) {\n  title.textContent = 'Привет из JavaScript!';\n  title.style.color = '#3498db';\n}\n\n// 2. Создайте элемент\nconst p = document.createElement('p');\np.textContent = 'Этот абзац создан через JavaScript';\np.style.padding = '10px';\np.style.background = '#ecf0f1';\np.style.borderRadius = '4px';\ndocument.body.append(p);\n\n// 3. Обработайте событие\nconst btn = document.querySelector('button');\nif (btn) {\n  btn.addEventListener('click', () => {\n    p.textContent = 'Кнопка нажата!';\n    p.style.background = '#3498db';\n    p.style.color = 'white';\n  });\n}\n\nconsole.log('DOM загружен и готов!');\n",
         "instructions": "Найдите элемент h1 и измените его текст и цвет. Создайте новый элемент p и добавьте его на страницу. Добавьте обработчик click на кнопку, который меняет текст и стиль абзаца. Попробуйте создать список элементов."
       }
+    ],
+    "docsLinks": [
+      { "title": "MDN: DOM", "url": "https://developer.mozilla.org/ru/docs/Web/API/Document_Object_Model", "description": "Объектная модель документа" },
+      { "title": "MDN: querySelector", "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector", "description": "Поиск элементов" },
+      { "title": "javascript.info: DOM", "url": "https://javascript.info/document", "description": "Работа с DOM-деревом" }
     ]
   }
 ]
