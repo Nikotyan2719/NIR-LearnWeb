@@ -5,9 +5,10 @@
     </div>
     <div v-if="block.language === 'javascript'" class="space-y-0">
       <UiCodeEditor
+        ref="editorRef"
         :language="block.language"
         :initial-code="block.initialCode"
-        @code-changed="() => emit('completed')"
+        @code-changed="onCodeChanged"
       />
     </div>
     <div v-else>
@@ -25,6 +26,25 @@
         :css="previewCss"
       />
     </div>
+
+    <div class="flex items-center gap-2 mt-3">
+      <UButton
+        label="Проверить ИИ"
+        icon="i-heroicons-sparkles-solid"
+        trailing
+        size="sm"
+        color="secondary"
+        :loading="ai.state.loading"
+        @click="requestReview"
+      />
+    </div>
+
+    <LessonAIReviewPanel
+      :loading="ai.state.loading"
+      :review="ai.state.review"
+      :error="ai.state.error"
+      @close="ai.clear()"
+    />
   </div>
 </template>
 
@@ -44,6 +64,8 @@ const currentCode = ref(props.block.initialCode);
 
 const appliedHtml = ref("");
 const appliedCss = ref("");
+
+const ai = useAIReview();
 
 const previewHtml = computed(() => {
   if (props.block.language === "html") {
@@ -72,6 +94,18 @@ function applyPreview() {
   }
   emit("completed");
 }
+
+function requestReview() {
+  const code = currentCode.value;
+  ai.submitReview(
+    _lessonTitle,
+    props.block.instructions || "",
+    code,
+    props.block.language,
+  );
+}
+
+const _lessonTitle = inject<string>("lessonTitle", "");
 
 onMounted(() => {
   if (props.block.language === "html") {

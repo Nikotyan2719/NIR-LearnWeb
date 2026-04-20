@@ -33,15 +33,18 @@ const features = ref([
         :features="features"
       />
 
-      <UPageSection
+      <div
         id="EDITOR"
-        class="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-green-400/50 dark:border-green-800/50 backdrop-blur rounded-2xl shadow-lg"
-        title="Попробуй написать свой код!"
-        description="Используй наш редактор с поддержкой JavaScript, HTML и CSS"
-        :ui="{ container: 'py-12!' }"
+        class="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-green-400/50 dark:border-green-800/50 backdrop-blur rounded-2xl shadow-lg p-6 lg:p-8"
       >
-        <UiCodeEditor />
-      </UPageSection>
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+          Попробуй написать свой код!
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Редактируй HTML, CSS и JavaScript на отдельных вкладках — нажми «Запустить» чтобы увидеть результат
+        </p>
+        <UiMultiTabEditor />
+      </div>
     </div>
   </div>
 </template>

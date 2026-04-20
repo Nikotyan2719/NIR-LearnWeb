@@ -50,15 +50,15 @@ export function useLessons() {
         const to = lesson ? `/education/${topic.id}/${lesson.slug}` : "#";
         const done = isDone(ref.id);
         return {
-          label: (done ? "✓ " : "") + ref.title,
+          label: ref.title,
           to,
           icon: done ? "i-heroicons-check-circle-solid" : undefined,
           class:
-            currentPath === to
-              ? "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400"
-              : done
-                ? "text-green-600 dark:text-green-400"
-                : "",
+              currentPath === to
+                ? "text-black bg-green-200/20 dark:bg-green-900/20 dark:text-green-400"
+                : done
+                  ? "text-green-600 dark:text-green-400"
+                  : "",
         };
       }
 
@@ -69,7 +69,7 @@ export function useLessons() {
           const to = lesson ? `/education/${topic.id}/${lesson.slug}` : "#";
           const done = isDone(lessonRef.id);
           return {
-            label: (done ? "✓ " : "") + lessonRef.title,
+            label: lessonRef.title,
             to,
             icon: done ? "i-heroicons-check-circle-solid" : undefined,
             class:

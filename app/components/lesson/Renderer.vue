@@ -44,6 +44,8 @@ const emit = defineEmits<{
 const progress = useProgress();
 const bottomSentinel = ref<HTMLElement | null>(null);
 
+provide("lessonTitle", props.lesson.title);
+
 const isCompletedFn = progress.isCompleted;
 const markCompletedFn = progress.markCompleted;
 
