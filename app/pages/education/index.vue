@@ -57,7 +57,7 @@ const topics = computed(() =>
     <div class="flex flex-col gap-10">
       <div v-for="topic in topics" :key="topic.id">
         <div class="flex items-center gap-3 mb-4">
-          <div :class="`bg-gradient-to-br ${topic.color} rounded-xl p-2.5 shadow-md`">
+          <div :class="`bg-gradient-to-br ${topic.color} rounded-xl p-2.5 shadow-md leading-none`">
             <UIcon :name="topic.icon" class="size-6 text-white" />
           </div>
           <div class="flex-1">

@@ -1,11 +1,8 @@
 const STORAGE_KEY = "weblearn-progress";
 
 const completedIds = ref<string[]>([]);
-let loaded = false;
 
 function load() {
-  if (loaded) return;
-  loaded = true;
   if (import.meta.client) {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
