@@ -26,6 +26,11 @@
 
     <LessonDocsLinks v-if="lesson.docsLinks" :links="lesson.docsLinks" />
 
+    <LessonAIChat
+      :lesson-title="lesson.title"
+      :lesson-description="lesson.description"
+    />
+
     <AppComment />
 
     <div ref="bottomSentinel" class="h-px" />

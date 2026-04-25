@@ -31,7 +31,7 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <div class="mt-12 p-6 bg-gray-400 backdrop-blur border-2 border-green-200 dark:bg-gray-800  dark:border-transparent rounded-lg">
+  <div class="mt-12 py-6 bg-gray-400 backdrop-blur border-2 border-green-200 dark:bg-gray-800  dark:border-transparent rounded-lg">
     <h2 class="text-xl font-semibold mb-4">Комментарии</h2>
     <UForm class="mb-8 space-y-4" @submit="onSubmit">
       <div class="space-y-2">

@@ -33,6 +33,8 @@ const features = ref([
         :features="features"
       />
 
+      <AppAIBanner />
+
       <div
         id="EDITOR"
         class="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-green-400/50 dark:border-green-800/50 backdrop-blur rounded-2xl shadow-lg p-6 lg:p-8"
