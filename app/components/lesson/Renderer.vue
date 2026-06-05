@@ -4,13 +4,8 @@
       <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
         {{ lesson.title }}
       </h1>
-      <UIcon
-        v-if="lessonCompleted"
-        name="i-heroicons-check-circle-solid"
-        class="size-6 text-green-500"
-      />
+      <UIcon v-if="lessonCompleted" name="i-heroicons-check-circle-solid" class="size-6 text-green-500"/>
     </div>
-
     <div v-for="(block, index) in lesson.blocks" :key="index">
       <LessonBlockText v-if="block.type === 'text'" :block="block" />
       <LessonBlockHeading v-else-if="block.type === 'heading'" :block="block" />
@@ -23,16 +18,9 @@
       />
       <LessonBlockList v-else-if="block.type === 'list'" :block="block" />
     </div>
-
     <LessonDocsLinks v-if="lesson.docsLinks" :links="lesson.docsLinks" />
-
-    <LessonAIChat
-      :lesson-title="lesson.title"
-      :lesson-description="lesson.description"
-    />
-
+    <LessonAIChat :lesson-title="lesson.title" :lesson-description="lesson.description"/>
     <AppComment />
-
     <div ref="bottomSentinel" class="h-px" />
   </div>
 </template>

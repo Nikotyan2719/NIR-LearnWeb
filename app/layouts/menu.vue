@@ -25,5 +25,6 @@ const navigation = computed(() => appStore.navigation);
         </UPageAside>
       </template>
     </UPage>
+    <AppFooter />
   </UApp>
 </template>

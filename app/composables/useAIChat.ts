@@ -8,13 +8,8 @@ export function useAIChat() {
   const loading = ref(false);
   const error = ref("");
 
-  async function sendMessage(
-    text: string,
-    lessonTitle: string,
-    lessonDescription: string,
-  ) {
+  async function sendMessage(text: string, lessonTitle: string, lessonDescription: string) {
     if (!text.trim() || loading.value) return;
-
     const userMessage: ChatMessage = { role: "user", content: text.trim() };
     messages.value.push(userMessage);
     loading.value = true;
@@ -23,11 +18,7 @@ export function useAIChat() {
     try {
       const data = await $fetch<{ reply: string }>("/api/ai-chat", {
         method: "POST",
-        body: {
-          lessonTitle,
-          lessonDescription,
-          messages: messages.value,
-        },
+        body: { lessonTitle, lessonDescription, messages: messages.value },
       });
       messages.value.push({ role: "assistant", content: data.reply });
     }
@@ -35,9 +26,7 @@ export function useAIChat() {
       const msg = err instanceof Error ? err.message : "Произошла ошибка";
       error.value = `Ошибка: ${msg}`;
     }
-    finally {
-      loading.value = false;
-    }
+    finally { loading.value = false; }
   }
 
   function clear() {
